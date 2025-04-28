@@ -90,6 +90,12 @@ const config = {
           },
           {
             type: 'docSidebar',
+            sidebarId: 'techDocsSidebar',
+            position: 'left',
+            label: 'Tech Docs'
+          },
+          {
+            type: 'docSidebar',
             sidebarId: 'nonTechDocsSidebar',
             position: 'left',
             label: 'Non Tech Docs'
@@ -99,12 +105,6 @@ const config = {
             sidebarId: 'booksSidebar',
             position: 'left',
             label: 'Books'
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'techDocsSidebar',
-            position: 'left',
-            label: 'Tech Docs'
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
