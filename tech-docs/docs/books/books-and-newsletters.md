@@ -28,7 +28,7 @@ Original blog post link: [Strategize your career](https://strategizeyourcareer.c
 
 [System Design Interview book 2](https://amzn.to/420ty6Z)
 
-## Newsletters
+## System Design and Architecture Newsletters
 
 [The System Design Newsletter](https://open.substack.com/pub/systemdesignone)
 
@@ -48,287 +48,224 @@ Original blog post link: [Strategize your career](https://strategizeyourcareer.c
 
 [Javarevisited Newsletter](https://open.substack.com/pub/javarevisited)
 
-🚀 Learn even faster
-Want a higher salary, more free time, and faster learning?
-This newsletter is your shortcut.
+## Software Engineering and Career
 
+[Clean Code](https://amzn.to/3E8MMhw)
 
-👉 Join the 17,000+ engineers already increasing salaries, saving hours, and learning more in less time. Paid subscribers also get these resources and learning tracks.
+[The clean coder](https://amzn.to/4jk2C83)
 
+[A Philosophy of Software Design](https://amzn.to/3E9BKsw)
 
-2. Software Engineering and Career
-📚 Books
-📚 Clean Code
+[The Algorithm Design Manual](https://amzn.to/421tdRA)
 
-📚 The clean coder
+[Dive into design patterns (refactoring.guru)](https://refactoring.guru/)
 
-📚 A Philosophy of Software Design
+[Design Patterns: Elements of Reusable Object-Oriented Software](https://amzn.to/44aJYuU)
 
-📚 The Algorithm Design Manual
+[Cracking the Coding Interview](https://amzn.to/3G9ccMv)
 
-📚 Dive into design patterns (refactoring.guru)
+[Grokking Algorithms](https://amzn.to/4iWqxdP)
 
-📚 Design Patterns: Elements of Reusable Object-Oriented Software
+[Introduction to Algorithms](https://amzn.to/3G7KpvT)
 
-📚 Cracking the Coding Interview
+[Effective Java](https://amzn.to/42rObrQ)
 
-📚 Grokking Algorithms
+[Software Engineering at Google](https://amzn.to/42j9FH2)
 
-📚 Introduction to Algorithms
+[The Complete Software Development Career Guide](https://amzn.to/3EkexDP)
 
-📚 Effective Java
+[Modern Software Engineering](https://amzn.to/4jhd1kC)
 
-📚 Software Engineering at Google
+[The Missing README](https://amzn.to/4iV22h0)
 
-📚 The Complete Software Development Career Guide
+[The Pragmatic Programmer](https://amzn.to/3YeWG88)
 
-📚 Modern Software Engineering
+[The Software Engineer’s Guidebook](https://amzn.to/4jhVHMt)
 
-📚 The Missing README
+[The Effective Engineer](https://amzn.to/41ZHqOL)
 
-📚 The Pragmatic Programmer
+## Software Engineering and Career Newsletters
 
-📚 The Software Engineer’s Guidebook
+[Strategize Your Career](https://open.substack.com/pub/strategizeyourcareer)
 
-📚 The Effective Engineer
+[Scarlet Ink](https://open.substack.com/pub/scarletink)
 
-📝 Newsletters
-📝 Strategize Your Career
+[The Best Leadership Newsletter Ever](https://open.substack.com/pub/bytitleonly)
 
-📝 Scarlet Ink
+[Manager.dev](https://open.substack.com/pub/zaidesanton)
 
-📝 The Best Leadership Newsletter Ever
+[The Pragmatic Engineer](https://open.substack.com/pub/pragmaticengineer)
 
-📝 Manager.dev
+[Level Up by Ethan Evans](https://open.substack.com/pub/levelupwithethanevans)
 
-📝 The Pragmatic Engineer
+[WonderLead in Tech](https://open.substack.com/pub/wonderlead)
 
-📝 Level Up by Ethan Evans
+[The Hard Parts of Growth](https://open.substack.com/pub/amivora)
 
-📝 WonderLead in Tech
+[Engineering Leadership](https://open.substack.com/pub/gregorojstersek)
 
-📝 The Hard Parts of Growth
+[A Life Engineered](https://open.substack.com/pub/alifeengineered)
 
-📝 Engineering Leadership
+[Wes Kao's Newsletter](https://open.substack.com/pub/weskao)
 
-📝 A Life Engineered
+[Besides Code](https://open.substack.com/pub/besidescode)
 
-📝 Wes Kao's Newsletter
+[Big Tech Careers](https://open.substack.com/pub/behavioralosfortechies)
 
-📝 Besides Code
+[Growth Algorithm](https://open.substack.com/pub/growthalgorithm)
 
-📝 Big Tech Careers
+[The Software Engineer Weekly](https://open.substack.com/pub/kevinnaughtonjr)
 
-📝 Growth Algorithm
+[Smarter Engineers 💡](https://open.substack.com/pub/albexl)
 
-📝 The Software Engineer Weekly
+[Hybrid Hacker](https://open.substack.com/pub/hybridhacker)
 
-📝 Smarter Engineers 💡
+[Dev Leader Weekly](https://open.substack.com/pub/devleaderweekly)
 
-📝 Hybrid Hacker
+[Bitsy](https://open.substack.com/pub/akoskm)
 
-📝 Dev Leader Weekly
+[Arpit’s Newsletter](https://open.substack.com/pub/arpit)
 
-📝 Bitsy
+[The T-Shaped Dev](https://open.substack.com/pub/petarivanovv9)
 
-📝 Arpit’s Newsletter
+[The Engineering Leader](https://open.substack.com/pub/rafapaez)
 
-📝 The T-Shaped Dev petarivanovv9@substack.com
+[The Conscious Leader](https://open.substack.com/pub/tahahussain)
 
-📝 The Engineering Leader
+[The Developing Dev](https://open.substack.com/pub/ryanlpeterman)
 
-📝 The Conscious Leader
+[Tokyo Tech Lead](https://open.substack.com/pub/adler)
 
-📝 The Developing Dev
+[Level Up Software Engineering 🚀](https://open.substack.com/pub/levelupsoftwareengineering)
 
-📝 Tokyo Tech Lead
+[Data Gibberish](https://open.substack.com/pub/datagibberish)
 
-📝 Level Up Software Engineering 🚀
+[Elevate](https://open.substack.com/pub/addyo)
 
-📝 Data Gibberish
+[Tech World With Milan Newsletter](https://open.substack.com/pub/techworldwithmilan)
 
-📝 Elevate
+[The Engineering Manager](https://open.substack.com/pub/theengineeringmanager)
 
-📝 Tech World With Milan Newsletter
+[The Hustling Engineer](https://open.substack.com/pub/thehustlingengineer)
 
-📝 The Engineering Manager
+[Path to Staff Engineer](https://open.substack.com/pub/pathtostaff)
 
-📝 The Hustling Engineer
+[Level up as a Tech Lead](https://open.substack.com/pub/anemarifiser)
 
-📝 Path to Staff Engineer
+[Perspectiveship](https://open.substack.com/pub/poczwardowski)
 
-📝 Level up as a Tech Lead
+[The Caring Techie Newsletter](https://open.substack.com/pub/thecaringtechie)
 
-📝 Perspectiveship
+[The People's Software Engineer](https://open.substack.com/pub/thepeoplessoftwareengineer)
 
-📝 The Caring Techie Newsletter
+[Front-End Focus](https://open.substack.com/pub/frontendfocus)
 
-📝 The People's Software Engineer
+[Tech Books](https://open.substack.com/pub/techbooks)
 
-📝 Front-End Focus
+[High Growth Engineer](https://open.substack.com/pub/highgrowthengineer)
 
-📝 Tech Books
+[Tech Lead Mastery](https://open.substack.com/pub/techleadmastery)
 
-📝 High Growth Engineer
+[Craft Better Software](https://open.substack.com/pub/danielmoka)
 
-📝 Tech Lead Mastery
+[Software Design: Tidy First?](https://open.substack.com/pub/tidyfirst)
 
-📝 Craft Better Software
+[Refactoring](https://open.substack.com/pub/refactoring)
 
-📝 Software Design: Tidy First?
+[Coding Challenges](https://open.substack.com/pub/codingchallenges)
 
-📝 Refactoring
+## Entrepreneurship and indie hacking
 
-📝 Coding Challenges
+[The Dip](https://amzn.to/4cqkgVy)
 
+[The Personal MBA](https://amzn.to/42eVtik)
 
-3. Entrepreneurship and indie hacking
-📚 Books
-📚 The Dip
+[Hooked: How to Build Habit-Forming Products](https://amzn.to/3Ebl5ET)
 
-📚 The Personal MBA
+[Zero to One](https://amzn.to/3FWa9LX)
 
-📚 Hooked: How to Build Habit-Forming Products
+## Entrepreneurship and indie hacking Newsletters
 
-📚 Zero to One
+[The IndiePreneur](https://open.substack.com/pub/theindiepreneur)
 
-📝 Newsletters
-📝 The IndiePreneur
+[Product Driven Newsletter](https://open.substack.com/pub/mattwatsonkc)
 
-📝 Product Driven Newsletter
+[https://mtlynch.io/](https://amzn.to/3FWa9LX)
 
-📝 https://mtlynch.io/
+[Product for Engineers](https://open.substack.com/pub/productforengineers)
 
-📝 Product for Engineers
+[Kyle Poyar’s Growth Unhinged](https://open.substack.com/pub/kylepoyar)
 
-📝 Kyle Poyar’s Growth Unhinged
+## Curated sources, Interviews, and Staying up to date
 
+[Tribe of Mentors](https://amzn.to/4jn2Ivz)
 
-4. Curated sources, Interviews, and Staying up to date
-📚 Books
-📚 Tribe of Mentors
+[Tools of Titans](https://amzn.to/4jl8s9b)
 
-📚 Tools of Titans
+## Curated sources, Interviews, and Staying up to date Newsletters
 
-📝 Newsletters
-📝 Hungry Minds
+[Hungry Minds](https://open.substack.com/pub/hungrymindsdev)
 
-📝 TLDR
+[TLDR](https://tldr.tech/)
 
-📝 Journal of Discoveries
+[Journal of Discoveries](https://open.substack.com/pub/robertoferraro)
 
-📝 Dev Interrupted
+[Dev Interrupted](https://open.substack.com/pub/devinterrupted)
 
-📝 Lenny's Newsletter
+[Lenny's Newsletter](https://open.substack.com/pub/lenny)
 
-📝 Leah’s ProducTea
+[Leah’s ProducTea](https://open.substack.com/pub/leahtharin)
 
+## Additional Books worth reading
 
-5. 📚 Additional Books worth reading
-Productivity, Focus & Habits
-📚 Getting Things Done
+### Productivity, Focus & Habits
 
-📚 The Motivation Hacker
+[Getting Things Done](https://amzn.to/4jeVutn)
 
-📚 The Compound Effect
+[The Motivation Hacker](https://amzn.to/3DXVTlg)
 
-📚 Indistractable
+[The Compound Effect](https://amzn.to/4iZCorE)
 
-📚 Feel Good Productivity
+[Indistractable](https://amzn.to/44edq33)
 
-📚 Deep Work
+[Feel Good Productivity](https://amzn.to/3E80fpT)
 
-📚 Atomic Habits
+[Deep Work](https://amzn.to/4i4m5Zs)
 
-Personal Finance & Wealth Building
-📚 The Millionaire Fastlane
+[Atomic Habits](https://amzn.to/3Gal9VO)
 
-📚 Money Master the Game
+### Personal Finance & Wealth Building
 
-📚 The Millionaire Next Door
+[The Millionaire Fastlane](https://amzn.to/3FXIx9d)
 
-📚 I Will Teach You to Be Rich - Ramit Sethi
+[Money Master the Game](https://amzn.to/4jd3cUW)
 
-Career Development, Learning & Professional Growth
-📚 Show Your Work
+[The Millionaire Next Door](https://amzn.to/3R1EPh5)
 
-📚 Ultralearning
+[I Will Teach You to Be Rich - Ramit Sethi](https://amzn.to/42kq2Do)
 
-📚 Learning How to Learn
+### Career Development, Learning & Professional Growth
 
-📚 So Good They Can’t Ignore You
+[Show Your Work](https://amzn.to/3RzSps7)
 
-📚 Turning Pro
+[Ultralearning](https://amzn.to/4lkaqbx)
 
-📚 The Proximity Principle
+[Learning How to Learn](https://amzn.to/424jKcg)
 
-📚 The Culture Map
+[So Good They Can’t Ignore You](https://amzn.to/3R5rrZh)
 
-Mindset, Personal Growth & Philosophy, Decision Making
-📚 Antifragile
+[Turning Pro](https://amzn.to/42b8DON)
 
-📚 Thinking Fast and Slow
+[The Proximity Principle](https://amzn.to/4iXUgmQ)
 
-📚 Never Split the Difference
+[The Culture Map](https://amzn.to/3R6DLZo)
 
-📚 The Surrender Experiment
+### Mindset, Personal Growth & Philosophy, Decision Making
 
+[Antifragile](https://amzn.to/3FWJQFf)
 
-👉 Join the 17,000+ engineers already increasing salaries, saving hours, and learning more in less time. Paid subscribers also get these resources and learning tracks.
+[Thinking Fast and Slow](https://amzn.to/4i4L7HN)
 
+[Never Split the Difference](https://amzn.to/4i3juif)
 
-🎯 Start now
-I’m a fan of reading, longer and shorter form texts.
-
-But I wasn’t always like this. Everything started reading one book, then another… always focusing on the next book.
-
-After you read a few, you’ll also want to improve how you read, check out the article below:
-
-😎 I read 300 books in 6 years. How to read faster (and learn more).
-😎 I read 300 books in 6 years. How to read faster (and learn more).
-Fran Soto
-·
-May 5, 2024
-Read full story
-That’s all for today. Thanks for reading and thanks to all the authors who dedicate their time to creating the resources others learn from.
-
-Let me know which books you would recommend me to read.
-
-Always a student 🤙
-
-🗞️ Other articles people like
-👨‍💻[INFOGRAPHIC] The 10 times in history that software engineers were to be replaced
-👨‍💻[INFOGRAPHIC] The 10 times in history that software engineers were to be replaced
-Fran Soto
-·
-Apr 13
-Read full story
-🔄 Why more Pull Requests won't make projects move faster
-🔄 Why more Pull Requests won't make projects move faster
-Fran Soto
-·
-Apr 20
-Read full story
-🏆🔥 How TOP engineers structure their day to maximize their productivity without burnout
-🏆🔥 How TOP engineers structure their day to maximize their productivity without burnout
-Fran Soto
-·
-Feb 2
-Read full story
-🏆 How I'm advancing my career without neglecting my life. "New year's resolutions" done right.
-🏆 How I'm advancing my career without neglecting my life. "New year's resolutions" done right.
-Fran Soto
-·
-Jan 5
-Read full story
-
-👏 Weekly applause
-These are some great articles I’ve read last week:
-
-It Depends: 7 viral Engineering Management dilemmas by Anton Zaides. Understanding and addressing common engineering management dilemmas, like remote work challenges and team dynamics, is essential for fostering a productive engineering environment.
-
-How Kubernetes Works Internally? by Saurabh Dashora. Understanding Kubernetes’ architecture, including its Control Plane and Worker Nodes, is essential for effectively deploying and managing containerized applications.
-
-How Slack Cut Frontend Build Times by 60% by Byte-Sized Design. Slack optimized their CI/CD pipeline by skipping unnecessary frontend builds, resulting in a 60% reduction in build frequency and significant savings in time and storage.
-
-How to turn chaos into clarity with Investigation Docs as an engineer by Jordan Cutler. Investigation docs are essential for structured problem solving, enhancing clarity and ownership, and can significantly contribute to your career growth as a software engineer.
+[The Surrender Experiment](https://amzn.to/3DW8ipT)
