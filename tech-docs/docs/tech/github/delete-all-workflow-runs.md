@@ -63,3 +63,5 @@ Once you logged in, call the script with a repo to which you have access and whe
 
 Example command:
 `.\run.ps1 -Owner glibnub -Repo waittimes-aggregator`
+
+All the workflow runs will be deleted after this command
