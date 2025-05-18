@@ -148,9 +148,8 @@ architecture. We like to add a feature to expose favorite genre of music.
 
 1. Microservices are often considered as the alternative to monolithic
    architecture.
-
 2. Monolith - refers to a single unit of code that is deployed as a single unit.
-3. Three common types:
+3. Three common types
    1. The Single-Process Monolith
    2. The Modular Monolith
    3. The Distributed Monolith
@@ -203,7 +202,7 @@ architecture. We like to add a feature to expose favorite genre of music.
 3. The boundaries of the ownership is not clear and this leads to contention
 4. Its doesn't mean that you will face this problem in monolith and also it
    doesn't mean you wont face this problem in microservices.
-5. Microservices architecture gives more boundaries around which ownership can be
-   defined and thus reducing the contention.
+5. Microservices architecture gives more better boundaries around which ownership
+   can be defined and thus reducing the contention.
 
 ## Advantages of Monoliths
