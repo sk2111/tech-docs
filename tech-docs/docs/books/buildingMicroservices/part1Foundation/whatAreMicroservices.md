@@ -143,3 +143,67 @@ architecture. We like to add a feature to expose favorite genre of music.
    end aspect the feature to add favorite genre is much localized change within
    that team
    ![Vertical layer team](../../../../static/img/buildingMicroservices/part1/verticalTeamLayer.PNG)
+
+## The Monolith
+
+1. Microservices are often considered as the alternative to monolithic
+   architecture.
+
+2. Monolith - refers to a single unit of code that is deployed as a single unit.
+3. Three common types:
+   1. The Single-Process Monolith
+   2. The Modular Monolith
+   3. The Distributed Monolith
+
+### The Single-Process Monolith
+
+1. Most common example - Where all the code is deployed as a single process.
+2. All the code is packaged as a single process, this architecture is simple to
+   understand and easy to deploy.
+3. This architecture makes sense for smaller organizations, however this
+   architecture has potential to grow as organization grows (The modular monolith)
+
+![Monolith](../../../../static/img/buildingMicroservices/part1/monolith.PNG)
+
+### The Modular Monolith
+
+1. The modular monolith is a subset of single process deployment that is
+   organized into separate modules.
+2. Each module can be worked separately but they are all deployed as a single
+   unit.
+3. For many organizations this architecture fits well when the module boundaries
+   are clear.
+4. It offers high degree of parallel work without challenges of distributed system.
+5. **Shopify** is a good example of modular monolith
+
+![Modular Monolith](../../../../static/img/buildingMicroservices/part1/modularMonolith.PNG)
+
+1. One of the challenges of a modular monolith is that database tends to not have
+   that separation and thus leading to significant challenges when needed to pull
+   apart the monolith as microservices in the future.
+2. There are examples where org take this idea further and have a modular
+   monolith with separate databases for each module.
+
+![Modular Monolith DB](../../../../static/img/buildingMicroservices/part1/modularMonolithDB.PNG)
+
+### The Distributed Monolith
+
+1. The distributed monolith is a monolith that has multiple services but for whatever
+   reason they are deployed as a single unit.
+2. It has the **all disadvantages** of a monolith and the **all disadvantages**
+   of a distributed system without the benefits of either.
+3. This architecture is often the result of a poorly designed microservice
+   or emerged in a environment in which not enough focus is placed on the concepts
+   like information hiding, strong cohesion and loose coupling.
+
+## Monoliths and Delivery Contention
+
+1. As more and more people working in the same place, they get in each other's way
+2. For example, different developers want to change same piece of code
+3. The boundaries of the ownership is not clear and this leads to contention
+4. Its doesn't mean that you will face this problem in monolith and also it
+   doesn't mean you wont face this problem in microservices.
+5. Microservices architecture gives more boundaries around which ownership can be
+   defined and thus reducing the contention.
+
+## Advantages of Monoliths
