@@ -234,7 +234,7 @@ architecture. We like to add a feature to expose favorite genre of music.
 5. Correlation IDs are unique identifiers that are passed between services
    to help track the flow of a request through the system.
 6. Some tools [humio](https://www.humio.com), [jaeger](https://www.jaegertracing.io),
-   [light step](https://www.lightstep.com) and [honeycomb](www.honeycomb.io)
+   [light step](https://www.lightstep.com) and [honeycomb](https://www.honeycomb.io)
    are some of the tools that can be used for log aggregation & tracing
 
 ### Container and Kubernetes
