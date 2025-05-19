@@ -206,3 +206,59 @@ architecture. We like to add a feature to expose favorite genre of music.
    can be defined and thus reducing the contention.
 
 ## Advantages of Monoliths
+
+1. Advantages of monolith - Simple deployment topology can avoid many pitfalls
+   with distributed services.
+2. Simple developer workflow, troubleshooting and E2E test are simplified.
+3. Code reuse is easier in monolith, in distributed system you need to decide
+   whether to copy the code or share the code as library or pull as different microservice
+4. A monolith architecture isn't something bad, its an architecture choice
+   that is appropriate for many organizations.
+5. Have justification for microservices, if you are not facing the problem of
+   monolith then don't go for microservices.
+
+## Enabling Technology
+
+1. Constantly look for issues caused by microservice distributed system
+   and then adopt technology
+
+### Log Aggregation and Distributed Tracing
+
+1. With increasing number of services, it can be hard to understand how the system
+   is working in production setting making troubleshooting difficult.
+2. Strongly recommend to use log aggregation and distributed tracing
+   to understand how the system is working.
+3. Log aggregation is the process of collecting logs from multiple services
+   and storing them in a central location.
+4. Enhance log aggregation tools even more powerful by implementing correlation IDs
+5. Correlation IDs are unique identifiers that are passed between services
+   to help track the flow of a request through the system.
+6. Some tools [humio](www.humio.com), [jaeger](www.jaegertracing.io), [light step](www.lightstep.com)
+   and [honeycomb](www.honeycomb.io) are some of the tools that can be used
+   for log aggregation & tracing
+
+### Container and Kubernetes
+
+1. Run microservices in isolation to ensure one doesn't affect the other.
+2. Containerization is a technology that allows you to run applications in
+   isolated environments.
+3. Virtualization is a technology that allows you to run multiple operating
+   systems on a single machine.
+4. Both provides isolation but container is lightweight and faster to start
+   than virtualization.
+5. Containers makes much sense for microservices as they are lightweight and
+   can be started and stopped quickly.
+6. Kubernetes is a container orchestration tool that allows you to manage
+   containers at scale.
+7. Don't use kubernetes for small scale applications, use when you have
+   multiple services and need to manage them at scale.
+8. Use public cloud providers like AWS, GCP, Azure to manage the kubernetes
+   cluster for you. Setting up kubernetes cluster is not easy and requires
+   a lot of expertise & time.
+
+### Streaming
+
+1. Organization is moving towards more real time systems & products that allows
+   to process data in real time are becoming more popular.
+2. Apache Kafka is a popular streaming platform popular.
+
