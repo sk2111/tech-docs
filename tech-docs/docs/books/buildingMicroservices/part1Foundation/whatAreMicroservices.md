@@ -233,9 +233,9 @@ architecture. We like to add a feature to expose favorite genre of music.
 4. Enhance log aggregation tools even more powerful by implementing correlation IDs
 5. Correlation IDs are unique identifiers that are passed between services
    to help track the flow of a request through the system.
-6. Some tools [humio](www.humio.com), [jaeger](www.jaegertracing.io), [light step](www.lightstep.com)
-   and [honeycomb](www.honeycomb.io) are some of the tools that can be used
-   for log aggregation & tracing
+6. Some tools [humio](https://www.humio.com), [jaeger](https://www.jaegertracing.io),
+   [light step](https://www.lightstep.com) and [honeycomb](www.honeycomb.io)
+   are some of the tools that can be used for log aggregation & tracing
 
 ### Container and Kubernetes
 
@@ -261,4 +261,3 @@ architecture. We like to add a feature to expose favorite genre of music.
 1. Organization is moving towards more real time systems & products that allows
    to process data in real time are becoming more popular.
 2. Apache Kafka is a popular streaming platform popular.
-
