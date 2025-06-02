@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Behaviors of Senior Engineer
@@ -8,7 +8,7 @@ sidebar_position: 2
 
 As a senior engineer having technical skills alone is not important. Being good at the functional skills is important but is required not sufficient
 
-What should be shown is the *How you go about the Job, the behaviors you exhibit* are the things
+What should be shown is the _How you go about the Job, the behaviors you exhibit_ are the things
 that signal to others that you are operating at next level
 
 ## Bringing Solutions, Not Just Problems
@@ -58,7 +58,7 @@ Junior behavior: "The requirements aren't clear. I won't start until they're fin
 
 Senior behavior: "The requirements have some ambiguity. I've identified the areas we can move forward on immediately, and I've scheduled time with stakeholders to clarify the uncertain aspects while development begins."
 
-Junior developers are often paralyzed by unclear requirements. 
+Junior developers are often paralyzed by unclear requirements.
 
 Senior developers recognize that perfect clarity is rare and know how to make effective progress despite ambiguity.
 
