@@ -1,25 +1,21 @@
----
-sidebar_position: 2
----
-
-# 🧭 Personal Spending Decision Guide
+# Personal Spending Decision Guide
 
 Use this guide before making **any type of purchase** — small or large, essential or optional. It’s designed to help you make intentional, value-driven decisions.
 
 ---
 
-## ✅ 1. Time Impact
+## 1. Time Impact
 
 > **Does this save time or eat time?**
 
 - [ ] It automates or speeds up my work/life.
 - [ ] It will create maintenance, distraction, or effort over time.
 
-✅ **Buy if:** it saves more time than it costs.
+**Buy if:** it saves more time than it costs.
 
 ---
 
-## ✅ 2. Financial Value
+## 2. Financial Value
 
 > **Does this put money in my pocket eventually?**
 
@@ -27,11 +23,11 @@ Use this guide before making **any type of purchase** — small or large, essent
 - [ ] It helps reduce future spending.
 - [ ] It’s just a cost without return.
 
-✅ **Buy if:** it earns money or avoids future expenses.
+**Buy if:** it earns money or avoids future expenses.
 
 ---
 
-## ✅ 3. Emotional Check
+## 3. Emotional Check
 
 > **Am I genuinely happy making this purchase?**
 
@@ -39,11 +35,11 @@ Use this guide before making **any type of purchase** — small or large, essent
 - [ ] It aligns with my values, goals, or identity.
 - [ ] It’s not driven by boredom, stress, or FOMO.
 
-✅ **Buy if:** it still feels good after reflection.
+**Buy if:** it still feels good after reflection.
 
 ---
 
-## ✅ 4. Price Comparison
+## 4. Price Comparison
 
 > **Have I compared prices and options?**
 
@@ -51,22 +47,22 @@ Use this guide before making **any type of purchase** — small or large, essent
 - [ ] Used ChatGPT to compare product quality, prices, and reviews.
 - [ ] Looked for discounts, cashback, or bundle deals.
 
-✅ **Buy if:** it’s the best value for money.
+**Buy if:** it’s the best value for money.
 
 ---
 
-## ✅ 5. Cool-Off Period (for Non-Essentials)
+## 5. Cool-Off Period (for Non-Essentials)
 
 > **Have I waited before buying this?**
 
 - [ ] Waited 24–72 hours before purchasing.
 - [ ] Still want it just as much after the waiting period.
 
-✅ **Buy if:** desire remains after a cooling-off period.
+**Buy if:** desire remains after a cooling-off period.
 
 ---
 
-## 🧮 Optional: Quick Scorecard
+## Optional: Quick Scorecard
 
 Assign a **1–5 score** for each criterion below:
 
@@ -79,11 +75,11 @@ Assign a **1–5 score** for each criterion below:
 | Cool-Off Period  |             |
 | **Total Score**  |             |
 
-### 👉 How to Decide:
+### How to Decide
 
 - **21–25**: Buy with full confidence ✅
 - **16–20**: Reconsider or delay ⏳
-- **<16**: Likely not worth it ❌
+- **Less than 16**: Likely not worth it ❌
 
 ---
 

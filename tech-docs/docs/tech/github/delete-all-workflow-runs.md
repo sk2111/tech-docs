@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 # Deleting All Workflow Runs
@@ -43,7 +43,7 @@ This script does a few things:
 
 1. Accepts the owner and the repository as arguments.
 
-2. Run it as: ```.\run.ps1 -Owner <GitHub-Owner> -Repo <GitHub-Repo>.```
+2. Run it as: `.\run.ps1 -Owner <GitHub-Owner> -Repo <GitHub-Repo>.`
 
 3. Avoids hard-coding values so it can run across different repositories easily.
 
