@@ -8,7 +8,7 @@
 
 ## 🔁 Motivation-Procrastination Relationship
 
-```
+```txt
 ↑ Motivation → ↓ Procrastination
 ```
 
@@ -16,7 +16,7 @@
 
 ## 📈 Motivation Formula
 
-```
+```txt
 Motivation = (Belief (B) × Importance (I)) / (Distraction (D) × Delay (D))
 ```
 
@@ -32,7 +32,7 @@ Motivation = (Belief (B) × Importance (I)) / (Distraction (D) × Delay (D))
 
 ## 🐒 The Mind's Internal Players (Tim Urban Model)
 
-```
+```txt
 [ Panic Monster ] → [ Instant Gratification Monkey ] → [ Rational Decision Maker (CEO) ]
 ```
 
@@ -106,7 +106,7 @@ How to reduce delay impact:
 
 ## 🏁 Summary Formula
 
-```
+```txt
 Motivation = (Belief × Importance) / (Distraction × Delay)
 ```
 
