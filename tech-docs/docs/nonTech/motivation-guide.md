@@ -1,4 +1,4 @@
-# 🧠 Motivation Framework: Overcoming Procrastination
+# Motivation Framework
 
 ## 📌 Core Idea
 
