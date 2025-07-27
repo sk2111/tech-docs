@@ -100,5 +100,45 @@ with confidence. Designed to help you become self-reliant person you aspire
 
 ## 🧠 Success Reminder
 
-"Success for me is showing up daily, learning intentionally, and recording every small win.
-I don’t need to be perfect. I need to keep growing."
+"Success for me is showing up daily, learning intentionally, and recording every
+small win. I don’t need to be perfect. I need to keep growing."
+
+## Burnout
+
+[Burnout](https://www.youtube.com/watch?v=1aL5mv5j_rI)
+
+If you feel overwhelmed or burned out, take a step back. Focus on rest and
+recovery first. Use the following steps:
+
+1. **Acknowledge**: Recognize you’re feeling burned out. The feeling of
+   burnout never goes away, but you can learn to manage it.
+
+## Why burnout happens
+
+1. Keeping up with the pace of change in tech, especially in AI is overwhelming
+2. The high pace of tech learn can lead to burnout
+3. The pressure to constantly learn and adapt can be exhausting
+4. The work culture also a reason for burnout
+
+## Burnout strategies
+
+1. Recognize that you are burned out
+2. See what all the things you are doing when you are not burned out
+   1. How do you perform when you are calm
+   2. See what your morning routine & evening routine when not burned out
+   3. See your ideal baseline
+3. When you are burned out, the normal routine is missed
+   1. Happens one day its fine, but when it happens for a week or two,it becomes a problem
+   2. Do a weekly check-in or monthly check-in
+4. Recognize how excited you are up to work
+   1. Is it boring, stressful or overwhelming
+5. Isolated in the case of burnout
+
+## Overcome burnout
+
+1. **Take a break**: Step away from work and tech for a few days. But it comes when you join back
+2. Prioritize self-care daily: Focus on sleep, nutrition, and exercise(mental, physical).
+3. Follow your daily routine: Stick to your morning and evening routines to maintain structure.
+4. Building in rewards for yourself: See what energizes you and do it, don't always rely on external validation.
+5. Learn to say no: Avoid taking on too many commitments.
+6. Seek support: Talk to friends, family, or a mentor about how you’re feeling. Other people also feel the same feelings. It will help to collobarate and overcome burnout
