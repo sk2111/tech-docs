@@ -42,13 +42,13 @@ A hypervisor `(VMware, Hyper-V, KVM, VirtualBox)` is a special management layer 
 
 ### Benefits
 
-1. Strong isolation - each VM has its own full OS
+1. Strong isolation (each VM has its own full OS)
 2. Different apps can run different OS versions
 3. Safer and more flexible than just installing apps directly on the host
 
 ### Limitations
 
-1. Each VM runs its own full OS - heavy (GBs of RAM needed per VM)
+1. Each VM runs its own full OS (more GBs of RAM needed per VM)
 2. Slow to start (minutes)
 3. Poor density - fewer VMs per server
 
@@ -57,21 +57,23 @@ A hypervisor `(VMware, Hyper-V, KVM, VirtualBox)` is a special management layer 
 
 ## The second evolution: Containers
 
-Instead of packaging a full OS, containers reuse the host OS kernel.
+Instead of packaging a full OS, containers reuse the host machines OS kernel.
 They isolate only
 
 1. File system
 2. Processes
 3. Network
-4. Resources
+4. Resources (CPU, memory, etc.)
 
-This is possible using Linux features like `namespaces` and `cgroups`.
+This isolation is achieved using Linux features like `namespaces` and `cgroups`.
 
 ![Docker Engine](./assets/docker_engine.png)
 
 :::tip
 Learn more about [Linux kernel namespaces and cgroups](https://blog.nginx.org/blog/what-are-namespaces-cgroups-how-do-they-work)
 :::
+
+---
 
 ## Docker's contribution
 
@@ -92,7 +94,9 @@ Linux containers existed earlier `(LXC, Solaris Zones, BSD Jails)`.
 3. Easy to scale, portable & efficient
 4. Cloud platforms adopted them rapidly
 
-### When to choose VM's?
+---
+
+## When to choose VM's?
 
 1. You need strong isolation
 2. You require different operating systems on the same hardware
@@ -100,7 +104,7 @@ Linux containers existed earlier `(LXC, Solaris Zones, BSD Jails)`.
 4. You want to run applications that need direct access to hardware or specialized
    drivers
 
-### When to choose Containers?
+## When to choose Containers?
 
 1. You want lightweight and fast application deployment
 2. You need to scale applications quickly and efficiently
