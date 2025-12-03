@@ -6,7 +6,7 @@ integrates the processes between software development (Dev) and IT operations
 
 Containerization concept is the foundation of modern DevOps.
 
-## Why Containers in a DevOps Workshop?
+## Why Containers in a DevOps?
 
 1. Modern DevOps cannot be explained without understanding `containerization`.
 2. Cloud deployments, microservices, CI/CD pipelines all rely heavily on this concept.
@@ -29,7 +29,7 @@ Containerization concept is the foundation of modern DevOps.
 `This problem remained for years:`
 **`How to better utilize a single machine safely ?`**
 
-## The first solution: Virtual Machines (VM's) & Hypervisors
+## The first solution: Hypervisors & Virtual Machines (VM's)
 
 A hypervisor `(VMware, Hyper-V, KVM, VirtualBox)` is a special management layer that
 
@@ -37,7 +37,8 @@ A hypervisor `(VMware, Hyper-V, KVM, VirtualBox)` is a special management layer 
 2. Slices CPU, RAM, Disk, Network & more
 3. Creates fully isolated Virtual Machines
 
-TBD: Insert image
+![Hypervisor](./assets/hypervisor.png)
+![Virtual Machine](./assets/virtual_machine.png)
 
 ### Benefits
 
@@ -66,8 +67,11 @@ They isolate only
 
 This is possible using Linux features like `namespaces` and `cgroups`.
 
-TBD: Add link for namespace & cgroups
-TBD: Insert Image
+![Docker Engine](./assets/docker_engine.png)
+
+:::tip
+Learn more about [Linux kernel namespaces and cgroups](https://blog.nginx.org/blog/what-are-namespaces-cgroups-how-do-they-work)
+:::
 
 ## Docker's contribution
 
@@ -100,5 +104,5 @@ Linux containers existed earlier `(LXC, Solaris Zones, BSD Jails)`.
 
 1. You want lightweight and fast application deployment
 2. You need to scale applications quickly and efficiently
-3. You are developing cloud-native applications
+3. You are developing cloud-native or microservice applications
 4. You want to maximize resource utilization on a single host
