@@ -1,25 +1,14 @@
 ---
 sidebar_position: 1
+sidebar_label: Containerization
 ---
 
-# Containerization
+# Back to history - Old Deployment World
 
-DevOps is a set of practices, tools, and a cultural philosophy that automates and
-integrates the processes between software development (Dev) and IT operations
-(Ops) teams
+Before diving into modern deployment (Kubernetes, containerization etc.,),
+let's rewind a bit and understand the evolution of application deployment.
 
-Containerization concept is the foundation of modern DevOps.
-
-## Why Containers in a DevOps?
-
-1. Modern DevOps cannot be explained without understanding `containerization`.
-2. Cloud deployments, microservices, CI/CD pipelines all rely heavily on this concept.
-3. `Containers ≠ Docker`. Docker is just one container engine. Others include
-   `containerd, CRI-O, Podman, LXC`
-4. Cloud platforms (AWS, Azure, GCP) internally run their services using container
-   technologies.
-
-## Back to history - The Old Deployment World
+## The old deployment scenario
 
 1. Imagine a powerful physical server: 12 cores, 32 GB RAM.
 2. You deploy one Java or Node or Python app on it.
@@ -39,7 +28,8 @@ A hypervisor `(VMware, Hyper-V, KVM, VirtualBox)` is a special management layer 
 
 1. Sits on top of raw hardware
 2. Slices CPU, RAM, Disk, Network & more
-3. Creates fully isolated Virtual Machines
+3. Creates fully isolated environment
+4. This environment maps to Virtual Machines
 
 ![Hypervisor](./assets/hypervisor.png)
 ![Virtual Machine](./assets/virtual_machine.png)
@@ -78,6 +68,16 @@ Learn more about [Linux kernel namespaces and cgroups](https://blog.nginx.org/bl
 :::
 
 ---
+
+## Why Containers in a DevOps?
+
+1. Containerization concept is the foundation of modern DevOps.
+2. Modern DevOps cannot be explained without understanding `containerization`.
+3. Cloud deployments, microservices, CI/CD pipelines all rely heavily on this concept.
+4. `Containers ≠ Docker`. Docker is just one container engine. Others include
+   `containerd, CRI-O, Podman, LXC`
+5. Cloud platforms (AWS, Azure, GCP) internally run their services using container
+   technologies.
 
 ## Docker's contribution
 
