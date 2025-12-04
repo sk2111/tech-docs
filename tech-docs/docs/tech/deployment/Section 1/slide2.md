@@ -84,7 +84,7 @@ docker rmi <img> # Delete an image
 
 ![Docker images](./assets/docker_images_cmd.png)
 
-#### Run Containers
+### Run Containers
 
 ```sh
 docker run <img> # Run a container in the foreground
@@ -128,6 +128,22 @@ docker rm <id> # Remove a stopped container
 ```
 
 ![Docker stop remove](./assets/docker_stop_containers.png)
+
+### Run a Command inside Container (Debugging purpose)
+
+```sh
+docker exec -it <id> sh # Open interactive shell inside container
+```
+
+```sh
+docker exec -it <id> /bin/bash # Open interactive bash inside container
+```
+
+```sh
+docker exec <id> ls /usr/share/nginx/html # print files in container
+```
+
+![Docker debug](./assets/docker_debug_container.png)
 
 ### Cleanup
 
