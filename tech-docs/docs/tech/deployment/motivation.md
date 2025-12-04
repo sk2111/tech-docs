@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Motivation
 
 As engineers, we all know the feeling of being in a perfect flow state,
