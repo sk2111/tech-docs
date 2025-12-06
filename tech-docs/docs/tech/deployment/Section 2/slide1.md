@@ -56,15 +56,17 @@ There are multiple ways to install k8's depending on your use case
    kubectl get pods -A
    ```
 
+   ![k8's installation](./assets/k8s_installation_4.png)
+
 7. We will talk about `kubectl` commands in detail in later sections. Don't worry
    if you don't understand the output now.
 
 ## Basic Terminologies
 
-1. Node: A node is a worker machine in Kubernetes, which can be a physical or
+1. **Node**: A node is a worker machine in Kubernetes, which can be a physical or
    virtual machine (1 node = 1 VM)
-2. Pod: The smallest and simplest Kubernetes object. A pod represents a single
-   instance of a running process in your cluster and can contain one or more containers.
+2. **Pod**: The smallest and simplest Kubernetes unit. A pod represents a single
+   instance of a running process and can contain one or more containers.
    (Assume pod is wrapper over container for now)
 
 ## How to use Kubernetes?
@@ -76,29 +78,121 @@ There are multiple ways to install k8's depending on your use case
    1. Imperative commands using `kubectl` (not recommended for production)
    2. Declarative configuration files (YAML/JSON) (recommended for production)
       ![Declarative vs Imperative](./assets/k8s_installation_3.png)
-4. Lets see an example of `declarative configuration yaml file` to deploy a simple
-   hello world pod.
+4. Lets see an example of `declarative configuration .yaml file` to deploy a `simple
+hello world pod`.
 
 ```yaml
 apiVersion: v1
 kind: Pod
 metadata:
-  name: hello-world-pod
+  name: nginx-pod-1
   labels:
-    app: hello-world
-    environment: demo
+    env: demo
 spec:
   containers:
-    - name: hello-world-container
-      image: hello-world
-      ports:
-        - containerPort: 80
+    - name: nginx-pod-1
+      image: nginx:latest
 ```
 
-## High level Architecture
+## Deploying the Pod to k8's
 
-s
+1. First lets look into the imperative way of deploying the pod using `kubectl`
 
-```
+   ```sh
+   kubectl run --image=nginx nginx-pod
+   ```
 
-```
+2. Now verify the pod is created and running using the below command
+
+   ```
+   kubectl get pods
+   ```
+
+   ```sh
+    kubectl get pods -o wide
+   ```
+
+   ![k8s_pod_1](assets/k8s_pod_1.png)
+
+3. To see the logs of the pod run the below command
+
+   ```sh
+   kubectl logs nginx-pod
+   ```
+
+4. To see the logs in realtime use the `-f` flag or tail the logs
+
+   ```sh
+   kubectl logs -f nginx-pod
+   ```
+
+5. To see detailed information about the pod run the below command
+
+   ```sh
+   kubectl describe pod nginx-pod
+   ```
+
+   ```sh
+   kubectl describe pod/nginx-pod
+   ```
+
+6. Now that we have seen the imperative way of deploying a pod, lets see the
+   declarative way using the above yaml file.
+
+7. Save the above yaml file as `pod.yaml` and run the below command to
+   create the pod
+
+   ```sh
+   kubectl create -f pod.yaml
+   ```
+
+   ![k8s_pod_2](assets/k8s_pod_2.png)
+
+8. Verify the pod is created and running using the below command
+
+   ```sh
+   kubectl get pods
+   ```
+
+9. Typing the yaml file is time consuming. So we can leverage a shortcut, the dry
+   run option to generate the yaml file from the imperative command.
+
+   ```sh
+    kubectl run nginx-3 --image=nginx --dry-run=client -o yaml > pod2.yaml
+   ```
+
+   ![k8s_pod_3](assets/k8s_pod_3.png)
+
+10. Now you can edit the `pod2.yaml` file to add more configurations if needed
+    and create the pod using the below command
+
+    ```sh
+    kubectl create -f pod2.yaml
+    ```
+
+11. To edit an existing pod use the below command
+
+    ```sh
+    kubectl edit pod nginx-pod
+    ```
+
+12. You can also edit the `yaml` file and apply the changes using the below command
+
+    ```sh
+    kubectl apply -f pod.yaml
+    ```
+
+13. Similar to docker exec you can also exec into the pod using the below command
+
+    ```sh
+    kubectl exec -it nginx-pod -- sh
+    ```
+
+    ```sh
+    minikube kubectl -- exec nginx-pod -it -- sh
+    ```
+
+## k8's High level Architecture
+
+Now that we have a basic understanding of k8's and have deployed our first pod,
+let's look into the high level architecture of k8's
