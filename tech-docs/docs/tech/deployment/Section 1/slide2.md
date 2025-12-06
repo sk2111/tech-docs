@@ -3,7 +3,9 @@ sidebar_position: 2
 sidebar_label: Container Engine
 ---
 
-# Understanding Container Engine
+# Understanding Docker Container Engine
+
+Let's explore Docker, the most popular containerization platform.
 
 1. Docker is a most popular containerization platform.
 2. It makes it easy to build,
@@ -15,6 +17,8 @@ sidebar_label: Container Engine
    2. Docker CLI
    3. Docker Hub (image registry)
    4. Docker Desktop
+
+![Docker Architecture](./assets/docker_architecture.png)
 
 ## 1. Installing Docker
 
@@ -66,7 +70,59 @@ If everything is set up correctly, Docker
 4. `Dockerfile` → Instructions to build your own image.
 5. `Engine` → The runtime that actually runs your containers.
 
+### Docker Image
+
+A Docker image is a lightweight, standalone, executable package that contains
+everything needed to run a piece of software like application code, runtime
+,libraries, environment variables & configuration files
+
+#### Layered Architecture
+
+Docker images are built layer by layer, where each instruction
+in a `Dockerfile` (such as `FROM`, `COPY`, `RUN`) creates a new layer.
+
+1. Layers are stacked to form the final image.
+2. They are cached, improving build speed.
+3. If a layer doesn’t change, Docker reuses it in future builds.
+
+#### Immutable
+
+Once an image is built, it cannot be modified.
+
+1. Any change creates a new layer or a new image version.
+2. This immutability ensures consistency
+   `If it runs on my machine, it will run everywhere.`
+
+#### Portable
+
+Images can run on any machine that has a compatible Docker engine.
+
+1. You can develop on Windows, test on Linux, deploy on Kubernetes the same image.
+2. This guarantees environment consistency.
+
+### Docker Container
+
+A Docker container is the runtime instance of a Docker image.
+
+`If an image is a class, the container is an object`
+
+#### Isolated
+
+Containers run in their own isolated environment
+
+1. Separate filesystem
+2. Separate process space
+3. Network namespace
+4. Resource limits (CPU, memory)
+
+#### Ephemeral
+
+By default, containers are temporary, that means a container stops, its
+filesystem changes are lost (unless using volumes).
+
 ## 5. Docker Command Cheat Sheet
+
+Let's practice some essential Docker commands to run, manage images and containers.
 
 ### Images
 
@@ -183,5 +239,13 @@ docker system prune # Remove unused data (do at risk!)
    2. Stopped containers,
    3. Unused networks (not default ones)
    4. Build cache
+
+:::
+
+:::tip
+
+1. Explore more commands from the official [Docker CLI reference](https://docs.docker.com/reference/cli/docker/)
+2. Cheat sheet - [Docker Cheat Sheet](https://dockerlabs.collabnix.com/docker/cheatsheet/)
+3. Another best place to learn is from CLI itself - `docker <command> --help`
 
 :::
