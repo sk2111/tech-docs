@@ -4,18 +4,19 @@ sidebar_position: 1
 
 # Motivation
 
-This workshop is built around by capturing real world project learnings
-& equip you with solid understanding on why things work the way they do
-in DevOps world (learnt from hours of debugging).
+This workshop is designed around real-world project learnings that come from
+hours of learning and solving practical DevOps problems. The goal is to give
+you a solid understanding of why things work the way they
+do in the DevOps world.
 
-`Goal: If this workshop helps you gain skills that make your life easier, then its
-purpose is achieved.`
+`If this workshop helps you gain skills that make your life easier or
+supports your DevOps journey, then its purpose is achieved..`
 
 :::important
 
-1. This workshop gives you solid understanding to the DevOps foundation.
-2. DevOps has its own learning curve & requires practice to build expertise.
-3. The goal is to make you comfortable with DevOps concepts so you can build on
-   them confidently.
+1. DevOps has a steep learning curve, and building expertise requires time & consistent
+   practice.
+2. This workshop aims to make you comfortable in DevOps Space so you can confidently
+   build on top of them.
 
 :::

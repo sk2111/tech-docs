@@ -366,3 +366,27 @@ Docker.
 4. To stop the container, go back to your terminal and press `Ctrl + C`.
 5. Congratulations! You've successfully containerized a React frontend
    application using Docker.
+
+---
+
+## Best Practices for building Docker Images
+
+1. Use official lightweight base images like `alpine` or `slim` variants
+   to reduce image size.
+2. Leverage multi-stage builds to reduce final image size.
+3. Use `.dockerignore` to exclude unnecessary files from the build context.
+4. Install only application production dependencies in the final image.
+   Remove dev dependencies (e.g., using `npm ci --only=production` for Node.js &
+   for python `pip install --no-dev`).
+5. Every `RUN`, `COPY` and `ADD` creates a layer. Combining commands with `&&`
+   reduces layers.
+6. Regularly update base images to get security patches and improvements.
+7. Use specific version tags for base images instead of `latest` to ensure consistency.
+
+:::tip
+
+1. More tips on best practices can be found in the official Docker documentation:
+   [Best practices for writing Docker files](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+2. Other resource: [Docker Image Size Optimization](https://devopscube.com/reduce-docker-image-size/)
+
+:::

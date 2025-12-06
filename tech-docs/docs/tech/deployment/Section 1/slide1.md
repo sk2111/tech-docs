@@ -119,19 +119,13 @@ Linux containers existed earlier `(LXC, Solaris Zones, BSD Jails)`.
 
 1. Earlier, apps were deployed directly on physical servers, causing conflicts,
    poor isolation and wasted resources.
-
 2. Virtual Machines (VMs) improved isolation by giving each app its own OS,
    but they were heavy, slow and resource-intensive.
-
 3. Containers emerged as a lightweight solution that shares the host OS kernel
    while isolating processes, filesystem and networks.
-
 4. Docker popularized containers by making them easy to build, run, share and deploy.
-
 5. Containers became essential in DevOps, microservices and cloud systems
    due to their speed, portability and efficiency.
-
 6. Use VMs when strong isolation or different OS types are needed.
-
 7. Use containers when you need fast, scalable and resource-efficient application
    deployment.
