@@ -115,7 +115,7 @@ Docker.
 1. After the image is built, run the container using the following command
 
    ```sh
-   docker run -p 5000:4000 node-app
+   docker run --name node-app -p 5000:4000 node-app
    ```
 
 2. Open your web browser and navigate to `http://localhost:5000`.
@@ -237,7 +237,7 @@ using Docker.
 1. After the image is built, run the container using the following command
 
    ```sh
-   docker run -p 8000:8000 fastapi-app
+   docker run --name fastapi-app -p 8000:8000 fastapi-app
    ```
 
 2. Open your web browser and navigate to `http://localhost:8000`.
@@ -358,7 +358,7 @@ Docker.
 1. After the image is built, run the container using the following command
 
    ```sh
-   docker run -p 6001:80 my-react-app
+   docker run --name my-react-app -p 6001:80 my-react-app
    ```
 
 2. Open your web browser and navigate to `http://localhost:6001`.

@@ -52,6 +52,8 @@ docker run --network my-bridge -d --name c2 busybox sleep 300
 docker exec -it c1 ping c2
 ```
 
+![Docker Bridge Network](./assets/docker_bridge.png)
+
 ### 2. `host`
 
 The container shares the host machine’s network stack.
