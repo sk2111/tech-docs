@@ -191,8 +191,3 @@ spec:
     ```sh
     minikube kubectl -- exec nginx-pod -it -- sh
     ```
-
-## k8's High level Architecture
-
-Now that we have a basic understanding of k8's and have deployed our first pod,
-let's look into the high level architecture of k8's
