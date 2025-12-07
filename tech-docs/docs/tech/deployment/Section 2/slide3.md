@@ -20,7 +20,7 @@ scaling.
 To solve these problems, k8's provides higher level abstractions on top of pods
 like `ReplicaSets, Deployments, Services, StatefulSets, Storage etc.,`
 
-To give you a brief overview of different parts in k8's
+To give you a brief overview of different concepts in k8's
 
 1. Pods
 2. Deployments
@@ -37,3 +37,9 @@ To give you a brief overview of different parts in k8's
 13. Replication Controllers
 14. Storage Classes
 15. Network Policies
+16. And many more..
+
+:::tip
+If you are interest in doing kubernetes certification, please refer to the official
+[Kubernetes training website](https://kubernetes.io/training/) for more details.
+:::

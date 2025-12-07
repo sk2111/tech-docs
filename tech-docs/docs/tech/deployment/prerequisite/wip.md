@@ -12,7 +12,9 @@
 
    1. Add a warning saying exact version is not required but make sure its latest stable version
 
-7. Atleast 8 core cpu and 16 gb ram
+7. At least 8 core cpu and 16 gb ram
+
+8. Add a summary to all the slides & add timer for exercise
 
 # docker issuse https://www.docker.com/blog/docker-engine-version-29/
 

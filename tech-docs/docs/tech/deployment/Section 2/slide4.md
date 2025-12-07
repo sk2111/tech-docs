@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 sidebar_label: K8's Deployments
 ---
 
@@ -20,7 +20,7 @@ sidebar_label: K8's Deployments
 
 ![k8s_deployment](assets/k8s_deployment.png)
 
-### Exercise Deployment using Imperative Command
+## Exercise Deployment using Imperative Command
 
 1. First let' clean up the previous pod
 
@@ -89,7 +89,7 @@ sidebar_label: K8's Deployments
    kubectl delete deployment <name>
    ```
 
-### Exercise Deployment using YAML
+## Exercise Deployment using YAML
 
 1. Let's create a deployment using declarative way using the below command
 

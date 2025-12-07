@@ -110,6 +110,13 @@ Docker.
    docker build -t node-app .
    ```
 
+3. **(Optional step)**, you can also tag the image with a version by default
+   `latest` tag is used.
+
+   ```sh
+   docker build -t node-app:v1.0 .
+   ```
+
 ### Step 3: Run the Docker Container
 
 1. After the image is built, run the container using the following command
