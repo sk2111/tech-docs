@@ -16,7 +16,8 @@ let's look into the high level architecture of k8's
 
    ![k8s_arch_1](assets/k8's_arch_1.png)
 
-2. The **Master Node** consists of the following components
+2. The **Master Node** takes care of administration task and consists of the following
+   components
 
    1. **API Server**: The front-end for the Kubernetes control plane. It exposes
       the Kubernetes API & is the entry point for all the REST commands used to

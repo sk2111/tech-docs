@@ -22,6 +22,12 @@ use case
 
 ![kubernetes_installation_options](./assets/kubernetes_installation_options.png)
 
+1. Local or dev purpose - minikube, kinD, k3s
+2. If you need complete control over the data & cluster - Self managed k8's on
+   VMs/ Bare metal
+3. You don't need any operations overhead - Managed k8's services from cloud providers
+   like AKS, EKS, GKE, OpenShift etc.,
+
 ## Installation in Local Machine
 
 1. Lets install `minikube` in your local machine for learning purpose.
