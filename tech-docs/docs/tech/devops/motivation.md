@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Motivation
@@ -9,9 +9,6 @@ hours of learning and solving practical DevOps problems. The goal is to give
 you a solid understanding of why things work the way they
 do in the DevOps world.
 
-`If this workshop helps you gain skills that make your life easier or
-supports your DevOps journey, then its purpose is achieved..`
-
 :::important
 
 1. DevOps has a steep learning curve, building expertise requires time & consistent
@@ -20,6 +17,9 @@ supports your DevOps journey, then its purpose is achieved..`
    learn/build on top of them.
 
 :::
+
+`If this workshop helps you gain skills that make your life easier or
+supports your DevOps journey, then its purpose is achieved..`
 
 ## How we deploy apps today?
 
