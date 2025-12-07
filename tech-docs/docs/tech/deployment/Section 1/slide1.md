@@ -6,11 +6,11 @@ sidebar_label: Containerization
 # Back to history - Old Deployment World
 
 Before diving into modern deployment (Kubernetes, containerization etc.,),
-let's rewind a bit and understand the evolution of application deployment.
+let's rewind a bit and understand the history of application deployment.
 
 ## The old deployment scenario
 
-1. Imagine a powerful physical server: 12 cores, 32 GB RAM.
+1. Imagine a powerful physical server: 16 cores, 32 GB RAM.
 2. You deploy one Java or Node or Python app on it.
 3. The app uses maybe 20-30% CPU and 10% RAM.
 4. You could definitely deploy another app, but
@@ -24,12 +24,13 @@ let's rewind a bit and understand the evolution of application deployment.
 
 ## The first solution: Hypervisors & Virtual Machines (VM's)
 
-A hypervisor `(VMware, Hyper-V, KVM, VirtualBox)` is a special management layer that
+A hypervisor `(VMware, Hyper-V, KVM, VirtualBox)` is a special management software
+layer that
 
 1. Sits on top of raw hardware
 2. Slices CPU, RAM, Disk, Network & more
 3. Creates fully isolated environment
-4. This environment maps to Virtual Machines
+4. This environment maps to modern `Virtual Machines`
 
 ![Hypervisor](./assets/hypervisor.png)
 ![Virtual Machine](./assets/virtual_machine.png)

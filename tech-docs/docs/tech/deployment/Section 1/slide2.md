@@ -42,12 +42,13 @@ account.
 
 :::warning
 Create a new Docker Hub account using your **personal email** if you don't have
-one by following [this link](https://docs.docker.com/accounts/create-account/)
+one by following [this link](https://docs.docker.com/accounts/create-account/).
+And post this workshop you can delete Docker Desktop
 :::
 
 ## 3. Verify Docker is working
 
-A simple test command to run in your terminal to verify Docker installation
+After docker desktop installation, a simple test command to run in your terminal
 
 ```sh
 docker run hello-world
@@ -122,7 +123,7 @@ filesystem changes are lost (unless using volumes).
 
 ## 5. Docker Command Cheat Sheet
 
-Let's practice some essential Docker commands to run, manage images and containers.
+Let's warmup with some essential Docker commands to run, manage images and containers.
 
 ### Images
 

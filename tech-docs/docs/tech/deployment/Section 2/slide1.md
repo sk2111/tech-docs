@@ -5,11 +5,11 @@ sidebar_label: Kubernetes Overview
 
 # Kubernetes Overview
 
-Kubernetes (K8s) is an open-source container orchestration platform designed to automate
-the deployment, scaling and management of containerized applications.
+Kubernetes (K8's) is an open-source container orchestration platform designed to
+automate the deployment, scaling and management of containerized applications.
 
-It was originally developed by Google and is now maintained by the Cloud Native
-Computing Foundation (CNCF).
+It was originally developed by `Google` and is now maintained by the `Cloud Native
+Computing Foundation (CNCF)`.
 
 :::tip
 Kubernetes is called k8's because there are 8 letters between the 'K' and the 'S'.
@@ -17,16 +17,18 @@ Kubernetes is called k8's because there are 8 letters between the 'K' and the 'S
 
 ## Installation Choices for K8's
 
-There are multiple ways to install k8's depending on your use case
+TO experience k8's, there are multiple ways to install k8's depending on your
+use case
 
 ![kubernetes_installation_options](./assets/kubernetes_installation_options.png)
 
 ## Installation in Local Machine
 
-1. Lets install minikube in your local machine for learning purpose.
+1. Lets install `minikube` in your local machine for learning purpose.
 2. Follow the [instructions here](https://minikube.sigs.k8s.io/docs/start/).
-   Note use the powershell instructions for windows machine.
-3. After installation run the below commands to start minikube
+   Note only use the `powershell instructions` for windows machine.
+3. After installation run the below commands to start minikube, make sure your PC
+   have at-least 10GB RAM and 8 CPU cores free.
 
    ```sh
    minikube start --nodes 3
@@ -60,6 +62,13 @@ There are multiple ways to install k8's depending on your use case
 
 7. We will talk about `kubectl` commands in detail in later sections. Don't worry
    if you don't understand the output now.
+
+:::tip
+Sometimes `kubectl` command may not work directly with minikube. In case
+you face issue use the below command to run kubectl commands with minikube context.
+
+Run this in powershell `function kubectl { minikube kubectl -- @args }`
+:::
 
 ## Basic Terminologies
 

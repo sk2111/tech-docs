@@ -5,6 +5,10 @@ sidebar_label: Docker Compose
 
 # Docker Compose
 
+Imagine you have a web application that consists of multiple services, such as a
+frontend, backend, and a database. Managing each of these services individually can
+be complex and error-prone.
+
 Docker Compose is a tool for defining and running multi-container applications.
 It is the key to unlocking a streamlined and efficient development and deployment
 experience
@@ -45,42 +49,42 @@ Lets see how Docker Compose works for a simple web application.
    name: my-web-app
 
    services:
-   frontend:
-     build: ./my-react-app
-     container_name: frontend
-     restart: always
-     ports:
-       - "6001:80"
-     depends_on:
-       - backend
-     networks:
-       - my-custom-network
+     frontend:
+       build: ./my-react-app
+       container_name: frontend
+       restart: always
+       ports:
+         - "6001:80"
+       depends_on:
+         - backend
+       networks:
+         - my-custom-network
 
-   backend:
-     build: ./node-app
-     container_name: backend
-     restart: always
-     ports:
-       - "5000:4000"
-     depends_on:
-       - database
-     networks:
-       - my-custom-network
+     backend:
+       build: ./node-app
+       container_name: backend
+       restart: always
+       ports:
+         - "5000:4000"
+       depends_on:
+         - database
+       networks:
+         - my-custom-network
 
-   database:
-     image: postgres:16-alpine
-     container_name: database
-     restart: always
-     environment:
-     POSTGRES_USER: user
-     POSTGRES_PASSWORD: password
-     POSTGRES_DB: postgres
-     ports:
-       - "5432:5432"
-     volumes:
-       - pg-data:/var/lib/postgresql/data
-     networks:
-       - my-custom-network
+     database:
+       image: postgres:16-alpine
+       container_name: database
+       restart: always
+       environment:
+       POSTGRES_USER: user
+       POSTGRES_PASSWORD: password
+       POSTGRES_DB: postgres
+       ports:
+         - "5432:5432"
+       volumes:
+         - pg-data:/var/lib/postgresql/data
+       networks:
+         - my-custom-network
 
    volumes:
      pg-data:
