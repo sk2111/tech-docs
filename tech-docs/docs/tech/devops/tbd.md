@@ -12,3 +12,4 @@ PS C:\Users\sathish.thangavel> echo $env.DOCKER_API_VERSION
 
 <!-- function kubectl { minikube kubectl -- @args } -->
 1. Build start to end like to story
+2. Review all the yaml files as its is not working
