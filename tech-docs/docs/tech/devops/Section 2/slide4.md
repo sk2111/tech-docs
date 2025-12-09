@@ -136,3 +136,40 @@ sidebar_label: K8's Deployments
          - image: nginx
            name: nginx
    ```
+
+## K8's Namespace
+
+1. So far we deployed all our k8's resources in the `default` namespace.
+2. Namespaces are like multiple teams within the same organization.
+3. Namespaces helps to create multiple virtual clusters within the same physical
+   cluster.
+4. They are useful in environments with many users spread across multiple teams
+   or projects.
+5. Namespaces provide a scope. Resources inside a namespace must be
+   unique, but resources in different namespaces can have the same name.
+6. You can use namespaces to separate environments between the different teams within
+   the same cluster.
+7. You can create a namespace using the below command:
+
+   ```sh
+   kubectl create namespace <namespace-name>
+   ```
+
+8. You can see all the namespaces in the cluster using the below command:
+
+   ```sh
+   kubectl get namespaces
+   ```
+
+   ![k8's_namespace_1](assets/k8's_namespace_1.png)
+
+9. For this workshop, we can use the `default` namespace. But in production,
+   it's a good practice to create separate namespaces for different teams
+   or projects.
+
+10. To deploy resources in a specific namespace, you can use the `-n` or
+    `--namespace` flag with kubectl commands. For example:
+
+```sh
+kubectl get pods -n <namespace-name>
+```

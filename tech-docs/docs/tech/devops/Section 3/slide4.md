@@ -155,7 +155,7 @@ sidebar_label: K8's Scaling & Resource
    ![k8s_hpa_3](./assets/k8s_hpa_3.png)
    ![k8s_hpa_4](./assets/k8s_hpa_4.png)
 
-5. Let's port forward the deployment using below command:
+5. Let's port forward the deployment using below command & verify in browser
 
    ```bash
    kubectl port-forward deployment/node-app 5001:4000
@@ -171,11 +171,12 @@ sidebar_label: K8's Scaling & Resource
 
 7. You can notice the deployment replicas is set to 2 initially. But as we have
    set the HPA with min as 1 and max as 5, the hpa will be re-adjusted to 1
-   pod.
+   pod. This will take some time to reflect in minikube
 
    ![k8s_hpa_6](./assets/k8s_hpa_6.png)
+   ![k8s_hpa_6.5](./assets/k8s_hpa_6.5.png)
 
-8. We can now generate some load on the deployment using `curl` tool in your powershell.
+8. We can now generate some load on the deployment using `curl` tool in your `powershell`.
 
    ```sh
     while ($true) {

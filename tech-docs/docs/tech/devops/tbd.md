@@ -12,4 +12,4 @@ PS C:\Users\sathish.thangavel> echo $env.DOCKER_API_VERSION
 2. Review all the yaml files as its is not working
 3. Give summary for each slide
 4. Say what to watchout in production & best practices wherever applicable
-5. Kubectl namespace
+5. QA Break Points 5 mins wherever applicable
