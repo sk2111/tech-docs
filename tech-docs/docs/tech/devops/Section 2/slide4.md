@@ -173,3 +173,12 @@ sidebar_label: K8's Deployments & Namespaces
 ```sh
 kubectl get pods -n <namespace-name>
 ```
+
+## Summary
+
+1. A Deployment is a higher level abstraction that manages a set of identical pods.
+2. It ensures high availability by automatically replacing crashed pods
+   and splitting pods across multiple nodes.
+3. Deployments also support rolling updates and rollback capabilities.
+4. Namespaces help to create multiple virtual clusters within the same physical cluster,
+   providing isolation between different teams or projects.

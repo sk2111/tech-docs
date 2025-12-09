@@ -83,7 +83,6 @@ what we have learned so far.
 
 1. kubernetes official documentation is great place to learn more
    [kubernetes.io](https://kubernetes.io/docs/)
-
 2. Quick Reference sheet for kubectl commands
    [look here](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 

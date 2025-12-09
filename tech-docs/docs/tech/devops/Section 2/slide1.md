@@ -17,7 +17,7 @@ Kubernetes is called k8's because there are 8 letters between the 'K' and the 'S
 
 ## Installation Choices for K8's
 
-TO experience k8's, there are multiple ways to install k8's depending on your
+To experience k8's, there are multiple ways to install k8's depending on your
 use case
 
 ![kubernetes_installation_options](./assets/kubernetes_installation_options.png)
@@ -34,7 +34,7 @@ use case
 2. Follow the [instructions here](https://minikube.sigs.k8s.io/docs/start/).
    Note only use the `powershell instructions` for windows machine.
 3. After installation run the below commands to start minikube, make sure your PC
-   have at-least 10GB RAM and 8 CPU cores free.
+   have at-least 12GB RAM and 8 CPU cores free.
 
 4. If your are using **Docker Desktop** just run the below command to start minikube
    withe the following command
@@ -151,13 +151,13 @@ Run this in powershell `function kubectl { minikube kubectl -- @args }`
    apiVersion: v1
    kind: Pod
    metadata:
-   name: nginx-pod-1
-   labels:
-     env: demo
+     name: nginx-pod-1
+     labels:
+       env: demo
    spec:
-   containers:
-     - name: nginx-pod-1
-       image: nginx:latest
+     containers:
+       - name: nginx-pod-1
+         image: nginx:latest
    ```
 
    ```sh
@@ -209,3 +209,11 @@ Run this in powershell `function kubectl { minikube kubectl -- @args }`
     ```sh
     minikube kubectl -- exec nginx-pod -it -- sh
     ```
+
+## Summary
+
+1. Kubernetes is a powerful container orchestration platform that automates the
+   deployment, scaling and management of containerized applications.
+2. We installed k8's in our local machine using minikube for learning purpose.
+3. We learned the basic terminologies like node, pod etc., in k8's.
+4. We deployed a pod using both imperative and declarative ways using `kubectl`.
