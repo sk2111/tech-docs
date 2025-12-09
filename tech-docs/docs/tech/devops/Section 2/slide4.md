@@ -140,9 +140,9 @@ sidebar_label: K8's Deployments & Namespaces
          labels:
            app: nginx-deployment
        spec:
-       containers:
-         - image: nginx
-           name: nginx
+         containers:
+           - image: nginx
+             name: nginx
    ```
 
 ## K8's Namespace
