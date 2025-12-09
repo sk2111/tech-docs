@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Hardware Requirements
 
-1. Work machine with at least 8 or 10 core CPU and 16 GB RAM
+1. Work machine with at least 8 CPU and 16 GB RAM
 
 ## Software Rquirements
 
@@ -24,10 +24,12 @@ sidebar_position: 1
 
 7. Install [Git bash](https://git-scm.com/install/windows)
 
-8. Verify the installation setup from terminal like below
+8. Access to run powershell as administrator (Reach IT team for help)
+
+9. Verify the installation setup from terminal like below
 
 ![Prereq](./assets/prereq.png)
 
 :::warning
- Exact version match is not required but make sure the installed software is latest stable version
+Exact version match is not required but make sure the installed software is latest stable version
 :::

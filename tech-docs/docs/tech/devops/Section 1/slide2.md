@@ -214,7 +214,7 @@ docker container prune # Remove stopped containers
 docker image prune # Remove unused dangling images
 ```
 
-:::tip
+:::info
 A dangling image in Docker is an image that has no name, no tag
 and is not used by any container. It is an unused leftover, usually
 created after a build or update. Docker keeps them to save time during future builds.
@@ -230,7 +230,7 @@ docker image prune -a # Remove all unused images
 docker system prune # Remove unused data (do at risk!)
 ```
 
-:::important
+:::danger
 
 1. Docker system prune is a cleanup command that removes unused
    Docker data to free disk space.
@@ -243,6 +243,8 @@ docker system prune # Remove unused data (do at risk!)
 
 :::
 
+---
+
 :::tip
 
 1. Explore more commands from the official [Docker CLI reference](https://docs.docker.com/reference/cli/docker/)
@@ -250,3 +252,17 @@ docker system prune # Remove unused data (do at risk!)
 3. Another best place to learn is from CLI itself - `docker <command> --help`
 
 :::
+
+## Practice Time
+
+1. Let's practice some commands to solidify your understanding with basic commands.
+2. 10 mins practice time.
+
+## Summary
+
+1. Docker is a popular containerization platform that simplifies building,
+   shipping, and running applications in isolated environments called containers.
+2. Key concepts include Docker images (blueprints), containers (running instances),
+   registries (image storage) and the Docker engine
+   (runtime).
+3. Essential Docker commands help manage images and containers effectively.

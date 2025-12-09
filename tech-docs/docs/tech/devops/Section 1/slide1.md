@@ -29,7 +29,7 @@ layer that
 
 1. Sits on top of raw hardware
 2. Slices CPU, RAM, Disk, Network & more
-3. Creates fully isolated environment
+3. Creates fully isolated environment & applications can be deployed inside them
 4. This environment maps to modern `Virtual Machines`
 
 ![Hypervisor](./assets/hypervisor.png)
@@ -75,14 +75,14 @@ Learn more about [Linux kernel namespaces and cgroups](https://blog.nginx.org/bl
 1. Containerization concept is the foundation of modern DevOps.
 2. Modern DevOps cannot be explained without understanding `containerization`.
 3. Cloud deployments, microservices, CI/CD pipelines all rely heavily on this concept.
-4. `Containers ≠ Docker`. Docker is just one container engine. Others include
+4. `Containers ≠ Docker`. Docker is just one of the container engine. Others include
    `containerd, CRI-O, Podman, LXC`
 5. Cloud platforms (AWS, Azure, GCP) internally run their services using container
    technologies.
 
 ## Docker's contribution
 
-Docker didn’t invent containerization &
+Docker didn’t invent `containerization` &
 Linux containers existed earlier `(LXC, Solaris Zones, BSD Jails)`.
 
 ### But Docker made containers
@@ -101,6 +101,10 @@ Linux containers existed earlier `(LXC, Solaris Zones, BSD Jails)`.
 
 ---
 
+:::tip[Production Tip]
+
+:::
+
 ## When to choose VM's?
 
 1. You need strong isolation
@@ -115,6 +119,8 @@ Linux containers existed earlier `(LXC, Solaris Zones, BSD Jails)`.
 2. You need to scale applications quickly and efficiently
 3. You are developing cloud-native or microservice applications
 4. You want to maximize resource utilization on a single host
+
+---
 
 ## Summary
 

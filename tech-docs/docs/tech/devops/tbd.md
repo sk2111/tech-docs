@@ -8,8 +8,9 @@ PS C:\Users\sathish.thangavel> echo $env.DOCKER_API_VERSION
 ## kubectl alias for minikube
 
 <!-- function kubectl { minikube kubectl -- @args } -->
+
 1. Build start to end like to story
-2. Review all the yaml files as its is not working
-3. Give summary for each slide
+2. Give summary for each slide
+3. Review all the yaml files as its is not working
 4. Say what to watchout in production & best practices wherever applicable
 5. QA Break Points 5 mins wherever applicable

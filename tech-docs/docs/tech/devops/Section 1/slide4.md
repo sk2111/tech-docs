@@ -34,8 +34,8 @@ A private internal network created by Docker on the host machine.
 
 1. Containers get an internal IP
 2. Containers can talk to each other using container names & IP's
-3. Default bridge network only allows communication between containers via IP addresses,
-   not container names
+3. Default bridge network only **allows communication between containers via IP addresses,
+   not container names**
 4. Best suited for **local development** and **single-host setups**
 
 **Example:**
@@ -146,8 +146,29 @@ exit
 cat /path/on/host/containerfile.txt
 ```
 
-## When to Use Volumes vs Bind Mounts
+:::tip[Production Tip]
 
-1. Use **Volumes** for most cases - easier to manage, portable, storage
+:::
+
+## Best Practices
+
+1. Use **Named Volumes** for most cases - easier to manage, portable, storage
    maintained by Docker and optimized for Docker.
-2. Use **Bind Mounts** for development - allows syncing code between host and container.
+2. Regularly back up important volumes to avoid data loss for critical data.
+3. Use **Bind Mounts** for local development - allows syncing code between host
+   and container.
+4. Isolate sensitive data using separate volumes with proper permissions.
+5. Use network to isolate containers that don't need to communicate.
+
+##
+
+---
+
+## Summary
+
+1. Docker Networks enable container communication and isolation.
+2. Multiple network types exist for different use cases: bridge, host, none, overlay.
+3. Docker Volumes provide persistent storage for containers.
+4. Named Volumes are managed by Docker and are preferred for most scenarios.
+5. Bind Mounts link host files/directories to containers, useful for development.
+6. Follow best practices for managing networks and volumes in production environments.

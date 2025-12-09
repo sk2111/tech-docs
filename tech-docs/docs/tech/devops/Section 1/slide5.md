@@ -6,8 +6,8 @@ sidebar_label: Docker Compose
 # Docker Compose
 
 Imagine you have a web application that consists of multiple services, such as a
-frontend, backend, and a database. Managing each of these services individually can
-be complex and error-prone.
+frontend, backend, and a database. Managing each of these services individually,
+spin up & down can be complex and error-prone.
 
 Docker Compose is a tool for defining and running multi-container applications.
 It is the key to unlocking a streamlined and efficient development and deployment
@@ -30,7 +30,7 @@ Lets see how Docker Compose works for a simple web application.
 
 1. **Service**: A service is a containerized application defined in the
    `docker-compose.yml` file.
-2. **Network**: Docker Compose automatically creates a network for your
+2. **Network**: Docker network for your
    services to communicate.
 3. **Volume**: Persistent storage that can be shared between services.
 4. **Project**: A project is a collection of services defined in a
@@ -38,8 +38,8 @@ Lets see how Docker Compose works for a simple web application.
 
 ## Exercise: Creating a Docker Compose File
 
-1. Create a new `docker-compose.yml` file in your directory parallel to the
-   frontend & backend directories.
+1. Create a new `docker-compose.yml` file in your `directory parallel to the
+frontend & backend directories`.
 
 2. Write the `docker-compose.yml` file with the following content
 
@@ -94,17 +94,27 @@ Lets see how Docker Compose works for a simple web application.
        driver: bridge
    ```
 
-3. Note: This is just an example. The frontend, backend & database are not connected
-4. Start the services using Docker Compose:
+   :::warning
+   This is just an example. The frontend, backend & database are not wired up
+   :::
+
+3. Start the services using Docker Compose:
 
    ```sh
-    docker compose up
+   docker compose up
    ```
 
-5. Open your web browser and navigate to `http://localhost:6001` to see the frontend
+4. Open your web browser and navigate to `http://localhost:6001` to see the frontend
 
-6. Stop the services:
+5. Stop the services:
 
    ```sh
    docker compose down
    ```
+
+## Best Practices for Docker Compose
+
+1. Use environment variables to manage sensitive data like passwords.
+2. Keep your `docker-compose.yml` file organized and well-documented.
+3. Use named volumes for persistent data storage.
+4. Leverage Docker Compose for local development and testing.

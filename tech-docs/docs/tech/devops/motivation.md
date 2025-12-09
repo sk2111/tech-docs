@@ -13,7 +13,7 @@ do in the DevOps world.
 
 1. DevOps has a steep learning curve, building expertise requires time & consistent
    practice.
-2. This workshop aims to make you comfortable in DevOps Space so you can confidently
+2. This workshop aims to make you comfortable in DevOps space so you can confidently
    learn/build on top of them.
 
 :::

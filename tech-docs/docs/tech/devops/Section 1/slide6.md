@@ -8,10 +8,11 @@ sidebar_label: Evolution of Deployment
 Now that you have learned the basics of Docker, Dockerfile and Docker Compose,
 it's time to see how everything fits together.
 
-:::note
-Your app can’t live on localhost forever. At some point, you’ve got to let your app
-spread its wings, escape the `127.0.0.1` bubble and meet real humans who click
-things they shouldn’t & raise bugs.
+:::note[Fun Fact]
+You developed an awesome app & your app can’t live on localhost forever.
+At some point, you’ve got to let your app spread its wings,
+escape the `127.0.0.1` world and meet real humans who do
+things they shouldn’t & report bugs.
 :::
 
 When someone starts their container journey, everything begins simple.
@@ -132,23 +133,21 @@ With Kubernetes, you get
 7. Enterprise-grade extensions (Istio, Prometheus, ArgoCD, etc.)
 8. And much more..
 
-This is why nearly every enterprise company chooses Kubernetes for
+This is why nearly every enterprise company chooses Kubernetes.
 
-1. Enterprise scale
-2. High availability
-3. Multi-region deployments
-4. Cloud-native architectures
-
-:::tip
+:::info[Did you know?]
 Enterprise organization will typically run around thousands to millions of containers.
 And Kubernetes is designed to handle this scale efficiently.
+
+Spotify & Open AI run thousands of containers to serve their global user base.
 :::
 
 ## Final Takeaway
 
-`There is no wrong choice.` You choose the tool based on your project’s needs.
+You choose the tool based on your project’s needs.**`There is no wrong choice.`**
 
-1. If small project, one VM + few services → `Docker Compose`
+1. If small project, one VM + few services,
+   occasional downtime is fine → `Docker Compose`
 2. If simple to medium project requiring multi-node → `Docker Swarm`
 3. If large-scale, enterprise, microservices → `Kubernetes`
 
@@ -159,3 +158,14 @@ And Kubernetes is designed to handle this scale efficiently.
    Kubernetes complexity.
 
 :::
+
+---
+
+## Summary
+
+1. You learned the evolution of container orchestration from Docker to
+   Docker Compose, Docker Swarm and finally Kubernetes.
+2. You understood the limitations at each stage and how the next tool
+   addressed those limitations.
+3. You now know when to choose each tool based on project needs
+   and scale.

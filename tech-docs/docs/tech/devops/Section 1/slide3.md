@@ -13,6 +13,7 @@ sidebar_label: Practice Time
    by running `node -v` and `npm -v` in your terminal.
 3. Download Python from [python.org](https://www.python.org/downloads/). Verify installation
    by running `python --version` and `pip --version` in your terminal.
+4. Create a brand new directory to maintain all the workshop exercises.
 
 ## Exercise 1: Containerizing Backend Node.js App
 
@@ -57,7 +58,7 @@ Docker.
    });
    ```
 
-5. Test the application locally
+5. Open VSCode integrated terminal & test the application locally
 
    ```sh
    node index.js
@@ -71,26 +72,26 @@ Docker.
 8. Create a `Dockerfile` in the root of your project with the following content
 
    ```Dockerfile
-    # Use an official Node.js runtime as a parent image
-    FROM node:24-alpine
+   # Use an official Node.js runtime as a parent image
+   FROM node:24-alpine
 
-    # Set the working directory in the container
-    WORKDIR /app
+   # Set the working directory in the container
+   WORKDIR /app
 
-    # Copy package.json and package-lock.json
-    COPY package*.json ./
+   # Copy package.json and package-lock.json
+   COPY package*.json ./
 
-    # Install dependencies
-    RUN npm install
+   # Install dependencies
+   RUN npm install
 
-    # Copy the rest of the application code by ignoring files in .dockerignore
-    COPY . .
+   # Copy the rest of the application code by ignoring files in .dockerignore
+   COPY . .
 
-    # Expose the port the app runs on
-    EXPOSE 4000
+   # Expose the port the app runs on
+   EXPOSE 4000
 
-    # Define the command to run the app
-    CMD ["node", "index.js"]
+   # Define the command to run the app
+   CMD ["node", "index.js"]
    ```
 
 9. Create a `.dockerignore` file to exclude unnecessary files from the Docker image
@@ -166,16 +167,16 @@ using Docker.
 4. Create a `main.py` file with the following content
 
    ```python
-    from fastapi import FastAPI
+   from fastapi import FastAPI
 
-    app = FastAPI()
+   app = FastAPI()
 
 
-    @app.get("/")
-    def read_root():
-        return {
-            "message": "Hello World from FastAPI!"
-        }
+   @app.get("/")
+   def read_root():
+      return {
+         "message": "Hello World from FastAPI!"
+      }
    ```
 
 5. Test the application locally
@@ -376,24 +377,42 @@ Docker.
 
 ---
 
+:::tip[Production Tip]
+
+:::
+
 ## Best Practices for building Docker Images
 
-1. Use official lightweight base images like `alpine` or `slim` variants
+1. Keep `images` small by minimizing the number of layers and using lightweight
+   `base images`.
+2. Use official lightweight base images like `alpine` or `slim` variants
    to reduce image size.
-2. Leverage multi-stage builds to reduce final image size.
-3. Use `.dockerignore` to exclude unnecessary files from the build context.
-4. Install only application production dependencies in the final image.
+3. Leverage multi-stage builds to reduce final image size.
+4. Use `.dockerignore` to exclude unnecessary files from the build context.
+5. Install only application production dependencies in the final image.
    Remove dev dependencies (e.g., using `npm ci --only=production` for Node.js &
    for python `pip install --no-dev`).
-5. Every `RUN`, `COPY` and `ADD` creates a layer. Combining commands with `&&`
+6. Every `RUN`, `COPY` and `ADD` creates a layer. Combining commands with `&&`
    reduces layers.
-6. Regularly update base images to get security patches and improvements.
-7. Use specific version tags for base images instead of `latest` to ensure consistency.
+7. Regularly update base images to get security patches and improvements.
+8. Use **specific version tags** for base images instead of `latest` to ensure consistency.
+9. Generally we follow semantic versioning for tagging images like `v1.0.0`, `v1.0.1`
+   etc to track versions easily.
 
-:::tip
+:::tip[Learn More]
 
 1. More tips on best practices can be found in the official Docker documentation:
    [Best practices for writing Docker files](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 2. Other resource: [Docker Image Size Optimization](https://devopscube.com/reduce-docker-image-size/)
+3. Learn about [semantic versioning](https://semver.org/)
 
 :::
+
+## Summary
+
+1. In this practice session, you containerized three different types of applications:
+   a Node.js backend, a Python FastAPI backend, and a React frontend application
+   using Docker.
+2. You created `Dockerfile` for each application, built Docker images,
+   and ran Docker containers to serve the applications.
+3. You also learned about multi-stage builds for optimizing Docker images.
