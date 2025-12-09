@@ -1,9 +1,9 @@
 ---
 sidebar_position: 3
-sidebar_label: Diving Deep into K8's
+sidebar_label: Diving Deep into K8's World
 ---
 
-# Diving Deep into K8's
+# Diving into K8's World
 
 1. In the previous section we saw a high level overview of k8's architecture
    & also pods. But pods are just one of the many components in k8's.

@@ -13,12 +13,13 @@ sidebar_label: K8's Deployments & Namespaces
 5. You can also use Deployments to perform rolling updates to your application,
    allowing you to update your application without downtime.
 6. Deployment also help us with rollout undo capabilities in case of bad deployments.
-7. Generally `replica sets` are not created directly, instead they are created
-   and managed by Deployments.
-8. The `selector` field in Deployment helps to identify the pods that belong
+7. The `selector` field in Deployment helps to identify the pods that belong
    to the Deployment. So the matching happens based on labels.
 
-![k8s_deployment](assets/k8s_deployment.png)
+   ![k8s_deployment](assets/k8s_deployment.png)
+
+8. Generally `replica sets` are not created directly, instead they are created
+   and managed by Deployments.
 
 ## Exercise Deployment using Imperative Command
 
@@ -95,25 +96,32 @@ sidebar_label: K8's Deployments & Namespaces
 
    ```sh
    kubectl create deployment nginx-deployment --image=nginx  --replicas=3
-   --dry-run=client -o yaml > deploy.yaml
+    --dry-run=client -o yaml > deploy.yaml
    ```
 
 2. The above command creates a deployment yaml file named `deploy.yaml` with
    3 replicas of nginx pods.
 
-3. Now let's apply the deployment using the below command
+3. Now lets reduce the replicas to 2 in the `deploy.yaml` file & delete the
+   existing deployment using the below command
+
+   ```sh
+   kubectl delete deployment nginx-deployment
+   ```
+
+4. Now let's apply the deployment using the below command
 
    ```sh
     kubectl apply -f deploy.yaml
    ```
 
-4. Now verify the deployment and pods are created and running using the below commands
+5. Now verify the deployment and pods are created and running using the below commands
 
    ```sh
     kubectl get pods -o wide
    ```
 
-5. Adding deployment yaml for reference
+6. Adding deployment yaml for reference
 
    ```yaml
    apiVersion: apps/v1
@@ -123,7 +131,7 @@ sidebar_label: K8's Deployments & Namespaces
      labels:
        app: nginx-deployment
    spec:
-     replicas: 3
+     replicas: 2
      selector:
        matchLabels:
          app: nginx-deployment
@@ -140,22 +148,17 @@ sidebar_label: K8's Deployments & Namespaces
 ## K8's Namespace
 
 1. So far we deployed all our k8's resources in the `default` namespace.
-2. Namespaces are like multiple teams within the same organization.
-3. Namespaces helps to create multiple virtual clusters within the same physical
-   cluster.
-4. They are useful in environments with many users spread across multiple teams
-   or projects.
-5. Namespaces provide a scope. Resources inside a namespace must be
-   unique, but resources in different namespaces can have the same name.
-6. You can use namespaces to separate environments between the different teams within
-   the same cluster.
-7. You can create a namespace using the below command:
+2. Namespaces are like multiple teams within the same organization. Namespaces
+   helps to create multiple virtual clusters within the same physical cluster.
+3. Namespaces provide a scope. You can use namespaces to separate environments
+   between the different teams within the same cluster.
+4. You can create a namespace using the below command:
 
    ```sh
    kubectl create namespace <namespace-name>
    ```
 
-8. You can see all the namespaces in the cluster using the below command:
+5. You can see all the namespaces in the cluster using the below command:
 
    ```sh
    kubectl get namespaces
@@ -163,12 +166,12 @@ sidebar_label: K8's Deployments & Namespaces
 
    ![k8's_namespace_1](assets/k8's_namespace_1.png)
 
-9. For this workshop, we can use the `default` namespace. But in production,
+6. For this workshop, we can use the `default` namespace. But in production,
    it's a good practice to create separate namespaces for different teams
    or projects.
 
-10. To deploy resources in a specific namespace, you can use the `-n` or
-    `--namespace` flag with kubectl commands. For example:
+7. To deploy resources in a specific namespace, you can use the `-n` or
+   `--namespace` flag with kubectl commands. For example:
 
 ```sh
 kubectl get pods -n <namespace-name>
