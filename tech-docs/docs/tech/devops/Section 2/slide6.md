@@ -43,7 +43,8 @@ what we have learned so far.
     docker push sathish1996/node-app:1.0.0
    ```
 
-5. Now create a deployment yaml file `deployment.yaml` & `service.yaml` file
+5. Now create a deployment yaml file `deployment.yaml` & `service.yaml` file &
+   use the uploaded docker image in the deployment file.
 
 6. Apply the deployment using the below command
 
@@ -68,14 +69,14 @@ what we have learned so far.
 9. Expose the service using the below command
 
    ```sh
-    minikube service <service-name>
+   minikube service <service-name>
    ```
 
 10. If everything is done correctly you should be able to see the app running in
     the browser.
 
-11. Watchout for common issues like image pull issues, wrong image name/tag,
-    container port is correctly mapped with the service target port etc.
+11. Watchout for common issues like `image pull issues, wrong image name/tag,
+container port is correctly mapped with the service target port`.
 
 12. Congrats you have successfully deployed your first app in k8's cluster!
 
