@@ -23,9 +23,13 @@ Let's explore Docker, the most popular containerization platform.
 ## 1. Installing Docker
 
 The easiest and most beginner-friendly approach is using Docker Desktop.
+If you don't have license, feel free to install Rancher Desktop
 
 :::tip
-Download Docker Desktop from the [official site](https://www.docker.com/products/docker-desktop)
+
+1. Download Docker Desktop from the [official site](https://www.docker.com/products/docker-desktop)
+2. Download Rancher Desktop from the [official site](https://rancherdesktop.io/)
+
 :::
 
 It comes with:
@@ -34,17 +38,6 @@ It comes with:
 2. Docker CLI
 3. Easy system UI
 4. Automatic updates toggle & much more.
-
-## 2. Logging in & verifying installation
-
-After installation open your docker desktop app and sign in with your Docker Hub
-account.
-
-:::warning
-Create a new Docker Hub account using your **personal email** if you don't have
-one by following [this link](https://docs.docker.com/accounts/create-account/).
-And post this workshop you can delete Docker Desktop
-:::
 
 ## 3. Verify Docker is working
 
@@ -245,19 +238,6 @@ docker system prune # Remove unused data (do at risk!)
 
 ---
 
-:::tip
-
-1. Explore more commands from the official [Docker CLI reference](https://docs.docker.com/reference/cli/docker/)
-2. Cheat sheet - [Docker Cheat Sheet](https://dockerlabs.collabnix.com/docker/cheatsheet/)
-3. Another best place to learn is from CLI itself - `docker <command> --help`
-
-:::
-
-## Practice Time
-
-1. Let's practice some commands to solidify your understanding with basic commands.
-2. 10 mins practice time.
-
 ## Summary
 
 1. Docker is a popular containerization platform that simplifies building,
@@ -266,3 +246,14 @@ docker system prune # Remove unused data (do at risk!)
    registries (image storage) and the Docker engine
    (runtime).
 3. Essential Docker commands help manage images and containers effectively.
+4. We will cover docker in detail in the upcoming sections as this is
+   the default choice for most enterprise org.
+5. Note: If you are using rancher desktop, most commands remain the same.
+
+:::tip[Learn More]
+
+1. Explore more commands from the official [Docker CLI reference](https://docs.docker.com/reference/cli/docker/)
+2. Cheat sheet - [Docker Cheat Sheet](https://dockerlabs.collabnix.com/docker/cheatsheet/)
+3. Another best place to learn is from CLI itself - `docker <command> --help`
+
+:::

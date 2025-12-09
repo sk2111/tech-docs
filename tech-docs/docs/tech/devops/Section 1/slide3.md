@@ -193,26 +193,26 @@ using Docker.
 8. Create a `Dockerfile` in the root of your project with the following content
 
    ```Dockerfile
-    # Use an official Python runtime as a parent image
-    FROM python:3.12-slim
+   # Use an official Python runtime as a parent image
+   FROM python:3.12-slim
 
-    # Set the working directory in the container
-    WORKDIR /app
+   # Set the working directory in the container
+   WORKDIR /app
 
-    # Copy requirements.txt
-    COPY requirements.txt ./
+   # Copy requirements.txt
+   COPY requirements.txt ./
 
-    # Install dependencies
-    RUN pip install --no-cache-dir -r requirements.txt
+   # Install dependencies
+   RUN pip install --no-cache-dir -r requirements.txt
 
-    # Copy the rest of the application code by ignoring files in .dockerignore
-    COPY . .
+   # Copy the rest of the application code by ignoring files in .dockerignore
+   COPY . .
 
-    # Expose the port the app runs on
-    EXPOSE 8000
+   # Expose the port the app runs on
+   EXPOSE 8000
 
-    # Define the command to run the app
-    CMD ["fastapi", "run", "main.py" , "--host", "0.0.0.0", "--port", "8000"]
+   # Define the command to run the app
+   CMD ["fastapi", "run", "main.py" , "--host", "0.0.0.0", "--port", "8000"]
    ```
 
 9. Create a `requirements.txt` file to list the dependencies
@@ -298,50 +298,50 @@ Docker.
    (Introducing Multi-stage builds)
 
    ```Dockerfile
-    # Stage 1: Build the React application
-    FROM node:24-alpine AS build
+   # Stage 1: Build the React application
+   FROM node:24-alpine AS build
 
-    # Set the working directory in the container
-    WORKDIR /app
+   # Set the working directory in the container
+   WORKDIR /app
 
-    # Copy package.json and package-lock.json
-    COPY package*.json ./
+   # Copy package.json and package-lock.json
+   COPY package*.json ./
 
-    # Install dependencies
-    RUN npm install
+   # Install dependencies
+   RUN npm install
 
-    # Copy the rest of the application code by ignoring files in .dockerignore
-    COPY . .
+   # Copy the rest of the application code by ignoring files in .dockerignore
+   COPY . .
 
-    # Build the React application for production
-    RUN npm run build
+   # Build the React application for production
+   RUN npm run build
 
-    # Stage 2: Serve the built application using a lightweight web server
-    FROM nginx:alpine
+   # Stage 2: Serve the built application using a lightweight web server
+   FROM nginx:alpine
 
-    # Copy the built files from the previous stage to Nginx's html directory
-    COPY --from=build /app/dist /usr/share/nginx/html
+   # Copy the built files from the previous stage to Nginx html directory
+   COPY --from=build /app/dist /usr/share/nginx/html
 
-    # Expose port 80
-    EXPOSE 80
+   # Expose port 80
+   EXPOSE 80
 
-    # Start Nginx server
-    CMD ["nginx", "-g", "daemon off;"]
+   # Start Nginx server
+   CMD ["nginx", "-g", "daemon off;"]
    ```
 
 8. Create a `.dockerignore` file to exclude unnecessary files from the Docker image
 
    ```plaintext
-    node_modules
-    build
-    Dockerfile
-    .dockerignore
+   node_modules
+   build
+   Dockerfile
+   .dockerignore
    ```
 
 :::tip
 
-1. Use multi-stage builds in your Dockerfile to optimize the image size by
-   separating the build environment from the runtime environment.
+1. We are using multi-stage builds in your Dockerfile to optimize the image size
+   by separating the build environment from the runtime environment.
 2. With multi-stage builds, you use multiple FROM statements in your Dockerfile.
    Each `FROM` instruction can use a different base, and each of them begins
    a new stage of the build.
@@ -381,8 +381,6 @@ Docker.
 
 :::
 
-## Best Practices for building Docker Images
-
 1. Keep `images` small by minimizing the number of layers and using lightweight
    `base images`.
 2. Use official lightweight base images like `alpine` or `slim` variants
@@ -399,15 +397,6 @@ Docker.
 9. Generally we follow semantic versioning for tagging images like `v1.0.0`, `v1.0.1`
    etc to track versions easily.
 
-:::tip[Learn More]
-
-1. More tips on best practices can be found in the official Docker documentation:
-   [Best practices for writing Docker files](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
-2. Other resource: [Docker Image Size Optimization](https://devopscube.com/reduce-docker-image-size/)
-3. Learn about [semantic versioning](https://semver.org/)
-
-:::
-
 ## Summary
 
 1. In this practice session, you containerized three different types of applications:
@@ -416,3 +405,12 @@ Docker.
 2. You created `Dockerfile` for each application, built Docker images,
    and ran Docker containers to serve the applications.
 3. You also learned about multi-stage builds for optimizing Docker images.
+
+:::tip[Learn More]
+
+1. More tips on best practices can be found in the official Docker documentation:
+   [Best practices for writing Docker files](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+2. Other resource: [Docker Image Size Optimization](https://devopscube.com/reduce-docker-image-size/)
+3. Learn about [semantic versioning](https://semver.org/)
+
+:::

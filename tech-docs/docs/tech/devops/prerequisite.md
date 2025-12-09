@@ -14,22 +14,27 @@ sidebar_position: 1
 
 2. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/) app.
 
-3. Go to [docker hub](https://hub.docker.com/) & Sign in with your **personal acount**.
+3. Go to [docker hub](https://hub.docker.com/) & Sign in with your **licensed acount**.
 
-4. Open your docker desktop application & signIn to your personal account
+4. Open your docker desktop application & signIn to your licensed account
 
-5. Install [Node js](https://nodejs.org/en/download)
+5. If you don't have a licensed docker account, feel free to use [Rancher Desktop](https://rancherdesktop.io/)
+   & follow along the same steps.
 
-6. Install [Python](https://www.python.org/downloads/)
+6. Install [Node js](https://nodejs.org/en/download)
 
-7. Install [Git bash](https://git-scm.com/install/windows)
+7. Install [Python](https://www.python.org/downloads/)
 
-8. Access to run powershell as administrator (Reach IT team for help)
+8. Install [Git bash](https://git-scm.com/install/windows)
 
-9. Verify the installation setup from terminal like below
+9. Access to run powershell as administrator (Reach IT team for help)
+
+10. Verify the installation setup from terminal like below
 
 ![Prereq](./assets/prereq.png)
 
 :::warning
-Exact version match is not required but make sure the installed software is latest stable version
+Exact version match is not required but make sure the installed software is
+latest stable version
+
 :::
