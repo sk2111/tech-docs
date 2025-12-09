@@ -5,7 +5,8 @@ sidebar_label: K8's Services
 
 # Services
 
-Let's start with a question, your pods are deployed & running
+Let's start with a question, your pods are deployed & running, that's great
+(Pat yourself on the back!).
 
 `But how do end users actually access your Pods and Deployments ?`
 
@@ -27,14 +28,14 @@ A Service acts as a stable entry point to communicate with a set of Pods.
 ### Without a Service
 
 1. Pod IPs will change whenever a pod restarts & discoverability is difficult
-2. Clients need to know pod IPs → bad practice
+2. Clients need to know pod IPs → bad practice **(Don't do this in production!)**
 
-### With a Service
+### With using a Service
 
 1. You get a stable, never-changing IP + DNS name
 2. Traffic is load-balanced across pods
 3. Only healthy pods receive traffic
-4. `Kube-proxy` handles routing automatically
+4. `Kube-proxy` handles routing & networking automatically
 5. `Service` sits in front of the `Deployment`, and all user requests pass through
    it.
 
@@ -69,14 +70,17 @@ Example use cases:
 
 1. Exposes a port on every node
 2. Node’s IP + NodePort → reaches the Service
-3. Useful for learning/debugging
-4. Not ideal for production
+3. Useful for learning/debugging, **Not ideal for production**
 
 Example:
 
 ```sh
 http://<node-ip>:30080/
 ```
+
+![k8s_svc_3](assets/k8s_svc_3.png)
+
+![k8s_svc_4](assets/k8s_svc_4.png)
 
 ### 3. LoadBalancer
 
@@ -91,98 +95,86 @@ Example:
 http://52.10.25.13 (external IP)
 ```
 
-![k8s_svc_3](assets/k8s_svc_3.png)
-
-![k8s_svc_4](assets/k8s_svc_4.png)
-
-## Real world Example
-
-Web application with frontend, backend & database
-
-![k8s_svc_2](assets/k8s_svc_2.png)
-
 ## Time to Practice
 
-1.  First let's clean up the previous deployment
+1. First let's clean up the previous deployment
 
-    ```sh
-    kubectl delete deployment nginx-deployment
-    ```
+   ```sh
+   kubectl delete deployment nginx-deployment
+   ```
 
-2.  Create a new deployment using the below yaml file `nginx-deployment.yaml`
+2. Create a new deployment using the below yaml file `nginx-deployment.yaml`
 
-    ```yaml
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: nginx-deployment
-      labels:
-        app: nginx
-    spec:
-      replicas: 3
-      selector:
-        matchLabels:
-          app: nginx
-      template:
-        metadata:
-          labels:
-            app: nginx
-        spec:
-          containers:
-            - image: nginx
-              name: nginx
-              ports:
-                - containerPort: 80
-    ```
+   ```yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: nginx-deployment
+     labels:
+       app: nginx
+   spec:
+     replicas: 3
+     selector:
+       matchLabels:
+         app: nginx
+     template:
+       metadata:
+         labels:
+           app: nginx
+       spec:
+         containers:
+           - image: nginx
+             name: nginx
+             ports:
+               - containerPort: 80
+   ```
 
-3.  Apply the deployment using the below command
+3. Apply the deployment using the below command
 
-    ```sh
-     kubectl apply -f nginx-deployment.yaml
-    ```
+   ```sh
+    kubectl apply -f nginx-deployment.yaml
+   ```
 
-4.  Verify the deployment & pods are created and running using the below commands
+4. Verify the deployment & pods are created and running using the below commands
 
-    ```sh
-     kubectl get deployments
+   ```sh
+    kubectl get deployments
 
-     kubectl get pods -o wide
-    ```
+    kubectl get pods -o wide
+   ```
 
-5.  Now create a `ClusterIP service` using the below `imperative command`
+5. Now create a `ClusterIP service` using the below `imperative command`
 
-    ```sh
-     kubectl expose deployment nginx-deployment --port=80
-    ```
+   ```sh
+    kubectl expose deployment nginx-deployment --port=80
+   ```
 
-6.  Verify the service is created using the below command
+6. Verify the service is created using the below command
 
-    ```sh
-     kubectl get services
-    ```
+   ```sh
+    kubectl get services
+   ```
 
-7.  Now lets understand a bit more using describe command
+7. Now lets understand a bit more using describe command
 
-    ```sh
-     kubectl describe service nginx-deployment
-    ```
+   ```sh
+    kubectl describe service nginx-deployment
+   ```
 
-8.  You can see the service created endpoints for all the pods in the nodes
+8. You can see the service created endpoints for all the pods in the nodes
 
-    ![k8s_svc_p_1](assets/k8s_svc_p_1.png)
+   ![k8s_svc_p_1](assets/k8s_svc_p_1.png)
 
-9.  To debug whether the `service` created & working we can use minikube
-    service command
+9. To debug whether the `service` created & working we can use minikube
+   service command
 
-    ```sh
-     minikube service list
-    ```
+   ```sh
+    minikube service list
+   ```
 
-    ```sh
-     minikube service nginx-deployment --url
-    ```
-
-    ![k8s_svc_p_2](assets/k8s_svc_p_2.png)
+   ```sh
+    minikube service nginx-deployment
+   ```
 
 10. Now lets create a `clusterIp` services using yaml file `nginx-service.yaml`
 
@@ -235,18 +227,18 @@ Web application with frontend, backend & database
     apiVersion: v1
     kind: Service
     metadata:
-    name: nginx-node-port
-    labels:
+      name: nginx-node-port
+      labels:
         app: nginx
     spec:
-    selector:
+      selector:
         app: nginx
-    ports:
+      type: NodePort
+      ports:
         - port: 80
-        protocol: TCP
-        targetPort: 80
-        nodePort: 30080
-    type: NodePort
+          protocol: TCP
+          targetPort: 80
+          nodePort: 30080
     ```
 
 17. Delete all the previous service
@@ -258,13 +250,13 @@ Web application with frontend, backend & database
 18. Apply the `NodePort` service using the below command
 
     ```sh
-        kubectl apply -f nginx-node-port-service.yaml
+     kubectl apply -f nginx-node-port-service.yaml
     ```
 
 19. Now we use the `minikube` service command to verify the service is working
 
     ```sh
-        minikube service nginx-node-port
+     minikube service nginx-node-port
     ```
 
 20. You should see the nginx welcome page in your browser
@@ -330,6 +322,12 @@ selector:
 1. Any Pod with `app: myapp` will automatically be part of the Service’s backend.
 2. This allows Kubernetes to dynamically add/remove pods as Deployment scales up/down.
 
+## Real world Example
+
+Web application with frontend, backend & database
+
+![k8s_svc_2](assets/k8s_svc_2.png)
+
 ## Summary
 
 1. Pods run your app
@@ -340,3 +338,5 @@ selector:
    1. ClusterIP → inside cluster
    2. NodePort → node-level port
    3. LoadBalancer → public access via cloud (k8s use cloud controller manager)
+6. You also have a good understanding on how real world applications are architected
+   using multiple services.
