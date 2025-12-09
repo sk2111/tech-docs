@@ -119,7 +119,9 @@ frontend & backend directories`.
    docker compose down
    ```
 
-## Best Practices for Docker Compose
+:::tip[Production Tip]
+
+:::
 
 1. Use environment variables to manage sensitive data like passwords.
 2. Keep your `docker-compose.yml` file organized and well-documented.

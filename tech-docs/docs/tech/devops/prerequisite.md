@@ -19,7 +19,7 @@ sidebar_position: 1
 4. Open your docker desktop application & signIn to your licensed account
 
 5. If you don't have a licensed docker account, feel free to use [Rancher Desktop](https://rancherdesktop.io/)
-   & follow along the same steps.
+   & follow along the workshop.
 
 6. Install [Node js](https://nodejs.org/en/download)
 

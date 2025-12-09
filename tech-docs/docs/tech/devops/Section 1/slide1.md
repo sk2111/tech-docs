@@ -43,14 +43,14 @@ layer that
 
 ### Limitations
 
-1. Each VM runs its own full OS (more GBs of RAM needed per VM)
+1. Each VM runs its own full OS (more GBs of Disk space & CPU, RAM needed per VM)
 2. Slow to start (minutes)
 3. Poor density - fewer VMs per server
 
 `This made people ask the next big question:`
 **`How do we isolate apps like VM's, but make it super lightweight?`**
 
-## The second evolution: Containers
+## The second innovation: Containers
 
 Instead of packaging a full OS, containers reuse the host machines OS kernel.
 They isolate only

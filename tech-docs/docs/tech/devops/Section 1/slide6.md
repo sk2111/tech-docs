@@ -65,7 +65,7 @@ But then, the project grows again…
 
 ![Docker Scale 2](./assets/docker_scale_2.png)
 
-## 3. The Demand for Scaling: Enter Docker Swarm
+## 3. The Demand for Scaling & High Availability
 
 The team now faces problems, they started getting complaints from
 customers like app is not working & when they investigate,
@@ -139,7 +139,8 @@ This is why nearly every enterprise company chooses Kubernetes.
 Enterprise organization will typically run around thousands to millions of containers.
 And Kubernetes is designed to handle this scale efficiently.
 
-Spotify & Open AI run thousands of containers to serve their global user base.
+Google, Microsoft, Spotify & Open AI run thousands to millions of containers to
+serve their global user base.
 :::
 
 ## Final Takeaway
@@ -150,6 +151,8 @@ You choose the tool based on your project’s needs.**`There is no wrong choice.
    occasional downtime is fine → `Docker Compose`
 2. If simple to medium project requiring multi-node → `Docker Swarm`
 3. If large-scale, enterprise, microservices → `Kubernetes`
+4. The important thing is to understand the trade-offs at each stage & make informed
+   decisions.
 
 :::tip
 
