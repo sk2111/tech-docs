@@ -11,7 +11,7 @@ automate the deployment, scaling and management of containerized applications.
 It was originally developed by `Google` and is now maintained by the `Cloud Native
 Computing Foundation (CNCF)`.
 
-:::tip
+:::tip[Fun Fact]
 Kubernetes is called k8's because there are 8 letters between the 'K' and the 'S'.
 :::
 
@@ -36,13 +36,22 @@ use case
 3. After installation run the below commands to start minikube, make sure your PC
    have at-least 10GB RAM and 8 CPU cores free.
 
+4. If your are using **Docker Desktop** just run the below command to start minikube
+   withe the following command
+
    ```sh
    minikube start --nodes 3
    ```
 
+5. If you are using **Rancher Desktop**, run the below command
+
+   ```sh
+   minikube start --driver=docker --cpus=8 --memory=12000 --nodes=3 --container-runtime=containerd --network-plugin=cni
+   ```
+
    ![k8's installation](./assets/k8s_installation_1.png)
 
-4. After that run `minikube status` to check the status of the cluster
+6. After that run `minikube status` to check the status of the cluster
 
    ```sh
    minikube status
@@ -50,11 +59,11 @@ use case
 
    ![k8's installation](./assets/k8s_installation_2.png)
 
-5. Install kubectl command line tool by following [instructions here](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/).
+7. Install kubectl command line tool by following [instructions here](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/).
 
    ![k8's installation](./assets/k8s_installation.png)
 
-6. Verify kubectl is working fine by running
+8. Verify kubectl is working fine by running
 
    ```sh
    kubectl get nodes
@@ -66,7 +75,7 @@ use case
 
    ![k8's installation](./assets/k8s_installation_4.png)
 
-7. We will talk about `kubectl` commands in detail in later sections. Don't worry
+9. We will talk about `kubectl` commands in detail in later sections. Don't worry
    if you don't understand the output now.
 
 :::tip
@@ -93,21 +102,6 @@ Run this in powershell `function kubectl { minikube kubectl -- @args }`
    1. Imperative commands using `kubectl` (not recommended for production)
    2. Declarative configuration files (YAML/JSON) (recommended for production)
       ![Declarative vs Imperative](./assets/k8s_installation_3.png)
-4. Lets see an example of `declarative configuration .yaml file` to deploy a `simple
-hello world pod`.
-
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nginx-pod-1
-  labels:
-    env: demo
-spec:
-  containers:
-    - name: nginx-pod-1
-      image: nginx:latest
-```
 
 ## Deploying the Pod to k8's
 
@@ -119,7 +113,7 @@ spec:
 
 2. Now verify the pod is created and running using the below command
 
-   ```
+   ```sh
    kubectl get pods
    ```
 
@@ -147,15 +141,24 @@ spec:
    kubectl describe pod nginx-pod
    ```
 
-   ```sh
-   kubectl describe pod/nginx-pod
-   ```
-
 6. Now that we have seen the imperative way of deploying a pod, lets see the
    declarative way using the above yaml file.
 
-7. Save the above yaml file as `pod.yaml` and run the below command to
+7. Save the below yaml file as `pod.yaml` and run the below command to
    create the pod
+
+   ```yaml
+   apiVersion: v1
+   kind: Pod
+   metadata:
+   name: nginx-pod-1
+   labels:
+     env: demo
+   spec:
+   containers:
+     - name: nginx-pod-1
+       image: nginx:latest
+   ```
 
    ```sh
    kubectl create -f pod.yaml

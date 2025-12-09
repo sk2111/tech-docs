@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-sidebar_label: K8's Deployments
+sidebar_label: K8's Deployments & Namespaces
 ---
 
 # Deployments

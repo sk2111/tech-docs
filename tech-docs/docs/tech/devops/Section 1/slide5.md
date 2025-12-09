@@ -76,9 +76,9 @@ frontend & backend directories`.
        container_name: database
        restart: always
        environment:
-       POSTGRES_USER: user
-       POSTGRES_PASSWORD: password
-       POSTGRES_DB: postgres
+         POSTGRES_USER: user
+         POSTGRES_PASSWORD: password
+         POSTGRES_DB: postgres
        ports:
          - "5432:5432"
        volumes:
@@ -98,15 +98,22 @@ frontend & backend directories`.
    This is just an example. The frontend, backend & database are not wired up
    :::
 
-3. Start the services using Docker Compose:
+3. Services restart possible values are:
+
+   1. `no`: Do not automatically restart the container. (default)
+   2. `always`: Always restart the container if it stops.
+   3. `on-failure`: Restart the container only if it exits with a non-zero status.
+   4. `unless-stopped`: Always restart the container unless it is explicitly stopped.
+
+4. Start the services using Docker Compose:
 
    ```sh
    docker compose up
    ```
 
-4. Open your web browser and navigate to `http://localhost:6001` to see the frontend
+5. Open your web browser and navigate to `http://localhost:6001` to see the frontend
 
-5. Stop the services:
+6. Stop the services:
 
    ```sh
    docker compose down
@@ -118,3 +125,14 @@ frontend & backend directories`.
 2. Keep your `docker-compose.yml` file organized and well-documented.
 3. Use named volumes for persistent data storage.
 4. Leverage Docker Compose for local development and testing.
+
+## Summary
+
+1. Docker Compose simplifies the management of multi-container applications.
+2. It allows you to define services, networks, and volumes in a single file.
+3. Using Docker Compose can streamline your development and deployment workflows.
+4. Follow best practices to ensure a smooth experience with Docker Compose.
+
+:::tip[Learn More]
+Learn more about Docker Compose in the [official documentation](https://docs.docker.com/compose/).
+:::
