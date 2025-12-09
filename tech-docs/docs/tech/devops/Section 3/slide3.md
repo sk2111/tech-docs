@@ -201,7 +201,8 @@ sidebar_label: K8's Secrets
                    name: app-secret
    ```
 
-5. This will pass all the key value pairs from the secret as environment variables to the pod.
+5. This will pass all the key value pairs from the secret as environment variables
+   to the pod.
 6. Apply the deployment using the below command
 
    ```sh
