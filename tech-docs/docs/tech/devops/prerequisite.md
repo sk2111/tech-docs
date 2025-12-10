@@ -34,7 +34,10 @@ sidebar_position: 1
 ![Prereq](./assets/prereq.png)
 
 :::warning
-Exact version match is not required but make sure the installed software is
-latest stable version
+
+1. Exact version match is not required but make sure the installed software is
+   latest stable version
+2. Please close all unused applications to free up system resources before starting
+   the workshop. Restart your system if required.
 
 :::

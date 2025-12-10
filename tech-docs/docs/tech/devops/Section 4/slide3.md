@@ -39,3 +39,10 @@ Secrets, ConfigMaps, HPA, resource limits, persistent volumes etc.,`.
    better management. Read about Helm in the [Helm Docs](https://helm.sh/docs/).
 
 :::
+
+:::tip[minkube]
+
+1. minikube comes with dashboard which you can use to visualize your deployments, pods, services etc.,
+2. To access the dashboard, run `minikube dashboard` command in your terminal,
+
+:::
