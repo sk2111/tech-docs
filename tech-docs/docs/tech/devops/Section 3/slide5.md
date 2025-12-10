@@ -19,3 +19,20 @@ Worker Nodes, Kubelet, Kube-Proxy` etc.
 8. We explored `Horizontal Pod Autoscaling (HPA)` and how it helps in scaling
    applications based on resource utilization.
 9. We learned how K8's collects metrics using `Metrics Server`.
+
+:::tip[Production tip]
+
+1. In our production environments, we will use the combination of `ConfigMaps` and
+   `Secrets` to manage application configuration and sensitive data.
+2. We will set appropriate `resource requests` and `limits` for our pods to
+   ensure optimal resource utilization and prevent resource contention.
+3. We will implement `Horizontal Pod Autoscaling (HPA)` to automatically
+   scale our applications based on resource utilization and traffic patterns.
+4. We will deploy using `Deployments` to ensure high availability and
+   easy management of our applications.
+5. And expose only necessary services using `Services` to ensure security and
+   accessibility of our applications.
+6. In Short, in production your application will be `Secrets`, `ConfigMaps`,
+   `Resource Management`, `HPA`, `Deployments` and `Services`.
+
+:::

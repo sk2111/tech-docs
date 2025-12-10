@@ -62,9 +62,11 @@ sidebar_label: K8's Env
     kubectl get pods
    ```
 
-6. Access the application using the service & minikube service URL & verify the response contains the environment variable value.
+6. Access the application using the service & minikube service URL & verify the
+   response contains the environment variable value.
 
-7. **Tip**: To debug the environment variables in the pod, you can exec into the pod and run the `printenv` command.
+7. **Tip**: To debug the environment variables in the pod, you can exec into the
+   pod and run the `printenv` command.
 
    ```sh
     kubectl exec -it <pod-name> -- sh
