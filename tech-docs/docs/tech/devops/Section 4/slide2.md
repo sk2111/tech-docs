@@ -1,41 +1,72 @@
 ---
-sidebar_position: 1
-sidebar_label: K8's Zero to Hero Exercise
+sidebar_position: 2
+sidebar_label: K8's Probes
 ---
 
-# K8's Zero to Hero - The Final Exercise
+# Kubernetes Probes - Liveness and Readiness
 
-1. You did it ! You have completed the K8's fundamentals.
-2. Now you have all the knowledge required to deploy a full stack application on
-   Kubernetes.
-3. Your task is to deploy a simple web application that uses a frontend, backend
-   and a database (Postgres or Redis)
-4. The frontend need to communicate with the backend, and the backend needs to
-   communicate with the database.
-5. It can be a simple application like a TODO app, a blog or any other web
-   application of your choice.
-6. The main goal of this exercise is to test your understanding of K8's concepts
-   and your ability to deploy and manage applications on K8's.
-7. You need to create the necessary `deployments, services,
-Secrets, ConfigMaps, HPA, resource limits, persistent volumes etc.,`.
-8. You can use any web application of your choice, but make sure it has a
-   frontend, backend, and a database component.
-9. Good luck and happy deploying!
+1. Imagine you have a web application running in a Kubernetes pod.
+2. Over time, the application might encounter issues like deadlocks or
+   stuck in while loop (just for fun) causing it to become unresponsive.
+3. How does Kubernetes know when your application is healthy or ready to serve traffic?
+4. This is where **Liveness Probes** and **Readiness Probes** come
+   into play.
+5. **Liveness Probe** checks if your application is alive. If it fails,
+   Kubernetes will restart the pod.
+6. **Readiness Probe** checks if your application is ready to serve traffic.
+   If it fails, Kubernetes will stop sending traffic to the pod until it passes again.
+7. You can configure these probes using HTTP requests, TCP sockets, or command execution.
+8. Here's an example of how to define liveness and readiness probes in a Kubernetes
+   deployment YAML:
 
-:::tip[Hints]
+   ```yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: nginx-deployment
+     labels:
+       app: nginx
+   spec:
+     replicas: 2
+     selector:
+       matchLabels:
+         app: nginx
+     template:
+       metadata:
+         labels:
+           app: nginx
+       spec:
+         containers:
+           - name: nginx
+             image: nginx:1.25
+             ports:
+               - containerPort: 80
+             readinessProbe:
+               httpGet:
+                 path: /
+                 port: 80
+               initialDelaySeconds: 5 # Wait 5s before starting checks
+               periodSeconds: 5 # Check every 5s
+               failureThreshold: 3 # After 3 failures → pod marked Unready
+               timeoutSeconds: 2 # Timeout for each check
+             livenessProbe:
+               httpGet:
+                 path: /
+                 port: 80
+               initialDelaySeconds: 10 # Wait 10s before checking liveness
+               periodSeconds: 10 # Check every 10s
+               failureThreshold: 3 # After 3 failed checks → pod restarted
+               timeoutSeconds: 2 # Timeout for each check
+   ```
 
-1. Use `ConfigMaps` to pass configuration data to your application.
-2. Use `Secrets` to pass sensitive data like database passwords.
-3. Set appropriate `resource requests` and `limits` for your pods.
-4. Implement `Horizontal Pod Autoscaling (HPA)` to scale your application based
-   on resource utilization.
-5. Use `Persistent Volumes` to store data for your database.
-6. Expose your frontend using a `Service` of type `LoadBalancer` or `NodePort`.
-7. Refer to the previous sections for examples and guidance on how to create
-   each component.
-8. You can use single yaml file with multiple documents separated by `---` & have
-   all your deployment, services etc., or multiple yaml files as per your preference.
-9. **Optional** - You can also try deploying using `Helm Charts` for
-   better management. Read about Helm in the [Helm Docs](https://helm.sh/docs/).
+9. You can deploy this YAML using
 
-:::
+   ```sh
+    kubectl apply -f <filename>.yaml.
+   ```
+
+10. Observe the log output to understand how probes checks periodically.
+
+    ```sh
+    kubectl logs -f <pod-name>
+    ```
