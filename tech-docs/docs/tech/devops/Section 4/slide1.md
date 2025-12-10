@@ -127,3 +127,17 @@ sidebar_label: K8's Volumes
    Not recommended for production.
 6. The reclaim policy is set when the PV is created and can be modified later
    if needed.
+
+:::tip[PRODUCTION TIP]
+
+1. In production environments, it is recommended to use `Persistent Volumes`
+   and `Persistent Volume Claims` for managing storage needs of applications.
+2. Use `Dynamic Provisioning` with appropriate `Storage Classes` to automate
+   the creation of persistent volumes based on application requirements.
+3. Set the `Reclaim Policy` of persistent volumes based on data retention
+   needs. Use `Retain` for critical data that needs to be preserved even after
+   the PVC is deleted.
+4. Regularly monitor and manage the storage resources to ensure optimal
+   performance and availability of applications.
+
+:::
