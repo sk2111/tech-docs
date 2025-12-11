@@ -38,6 +38,12 @@ Secrets, ConfigMaps, HPA, resource limits, persistent volumes etc.,`.
 9. **Optional** - You can also try deploying using `Helm Charts` for
    better management. Read about Helm in the [Helm Docs](https://helm.sh/docs/).
 
+## Example Architecture
+
+Web application with frontend, backend & database
+
+![k8s_hero](assets/k8s_hero.png)
+
 :::
 
 :::tip[minkube]
