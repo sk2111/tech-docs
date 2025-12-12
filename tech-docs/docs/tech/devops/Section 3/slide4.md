@@ -248,6 +248,8 @@ sidebar_label: K8's Scaling & Resource
     kubectl get hpa -w
     ```
 
+    ![k8s_hpa_final](./assets/k8s_hpa_final.png)
+
 13. Congratulations! You have successfully implemented HPA in K8's.
 
 ## Summary

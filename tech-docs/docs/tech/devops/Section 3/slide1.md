@@ -5,6 +5,17 @@ sidebar_label: K8's Env
 
 # K8's Env
 
+:::warning[Request]
+
+1. We will cover the first 4 topics in this section. Before pausing for a QA break.
+2. Feel free to ask any blocking questions .
+3. The fourth topics will have a practice session, which involves some waiting time
+   for the changes to reflect in minikube.
+4. So, it's better to pause there for questions for a while and continue after
+   the break.
+
+:::
+
 1. In any application, we have certain configuration values that are required for
    the application to run.
 2. These configuration values are generally passed as environment variables.
