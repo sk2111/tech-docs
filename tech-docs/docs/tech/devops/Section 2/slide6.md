@@ -1,23 +1,22 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 sidebar_label: K8's Services
 ---
 
 # Services
 
-Let's start with a question, your pods are deployed & running, that's great
+Your pods are deployed & running, that's great
 (Pat yourself on the back!).
 
-`But how do end users actually access your Pods and Deployments ?`
+`But how do end users actually access your Pods or Deployments ?`
 
 So far, we have learned
 
-1. We deployed Pods
-2. We deployed multiple Pods using Deployments
-3. A Deployment ensures we always run N replicas of the same Pod (identical containers)
-4. But when a user tries to access the application, they cannot directly talk to
-   Pods
-5. Pod IPs change frequently, Pods come and go & No guaranteed stability or discoverability
+1. We deployed `Pods` & we deployed multiple Pods using `Deployments`.
+2. A `Deployment` ensures we always run N replicas of the same Pod (identical instances).
+3. But when a user tries to access the application, they cannot directly talk to
+   Pods.
+4. Pod IP's change frequently, Pods come and go & no guaranteed stability or discoverability.
 
 This is where Kubernetes `Services` come in.
 
@@ -45,12 +44,11 @@ A Service acts as a stable entry point to communicate with a set of Pods.
 
 When users hit the Service
 
-1. The Service selects pods based on `labels`
-2. `kube-proxy` forwards the request to one of the pods
+1. The Service selects pods based on `selector labels`
+2. `kube-proxy` forwards the request to one of the healthy pods
 3. The selection is usually in `round-robin fashion` (can be configured differently)
-4. Only healthy pods receive traffic
-5. If one pod is down, the Service automatically stops routing traffic to it
-6. This gives you built-in load balancing & self-healing routing.
+4. If one pod is down, the Service automatically stops routing traffic to it
+5. This gives you built-in load balancing & self-healing routing.
 
 ## Types of Kubernetes Services
 
@@ -63,8 +61,7 @@ When users hit the Service
 Example use cases:
 
 1. Backend → Database
-2. API → Cache
-3. Frontend → Backend (inside cluster)
+2. API Server → Redis Cache
 
 ### 2. NodePort
 
@@ -86,8 +83,10 @@ http://<node-ip>:30080/
 
 1. Cloud provider creates an external load balancer (Azure LB, AWS ELB, GCP LB)
 2. Exposes a public endpoint
-3. Traffic → Load balancer → Service → Pods
+3. User traffic → Load balancer → Service → Pods
 4. Ideal for production-grade public access
+5. Recall the `cloud controller manager` from control plane architecture
+   which is responsible for provisioning cloud resources like Load balancers etc.,
 
 Example:
 
@@ -97,10 +96,16 @@ http://52.10.25.13 (external IP)
 
 ## Time to Practice
 
-1. First let's clean up the previous deployment
+1. First let's clean up the all the previous deployments
 
    ```sh
    kubectl delete deployment nginx-deployment
+   ```
+
+   or
+
+   ```sh
+   kubectl delete deployment --all
    ```
 
 2. Create a new deployment using the below yaml file `nginx-deployment.yaml`
@@ -221,7 +226,18 @@ http://52.10.25.13 (external IP)
 
 15. You can see the service created endpoints for all the pods in the nodes
 
-16. Lets create a `NodePort` service using the below yaml file `nginx-node-port-service.yaml`
+16. To debug whether the `service` created & working we can use minikube
+    service command
+
+    ```sh
+    minikube service list
+    ```
+
+    ```sh
+    minikube service nginx-deployment
+    ```
+
+17. Lets create a `NodePort` service using the below yaml file `nginx-node-port-service.yaml`
 
     ```yaml
     apiVersion: v1
@@ -241,31 +257,31 @@ http://52.10.25.13 (external IP)
           nodePort: 30080
     ```
 
-17. Delete all the previous service
+18. Delete all the previous service
 
     ```sh
      kubectl delete service nginx-cluster-ip
     ```
 
-18. Apply the `NodePort` service using the below command
+19. Apply the `NodePort` service using the below command
 
     ```sh
      kubectl apply -f nginx-node-port-service.yaml
     ```
 
-19. Now we use the `minikube` service command to verify the service is working
+20. Now we use the `minikube` service command to verify the service is working
 
     ```sh
      minikube service nginx-node-port
     ```
 
-20. You should see the nginx welcome page in your browser
+21. You should see the nginx welcome page in your browser
 
-21. Unfortunately, we cannot create `LoadBalancer` service in minikube as it requires
+22. Unfortunately, we cannot create `LoadBalancer` service in minikube as it requires
     `cloud provider integration`. Let's see that in action when we deploy in
     cloud provider like `Azure`.
 
-22. For completeness, here is the yaml for `LoadBalancer` service
+23. For completeness, here is the yaml for `LoadBalancer` service
 
     ```yaml
     apiVersion: v1
@@ -284,13 +300,13 @@ http://52.10.25.13 (external IP)
       type: LoadBalancer
     ```
 
-23. Lets delete the previous service
+24. Lets delete the previous service
 
     ```sh
      kubectl delete service nginx-node-port
     ```
 
-24. Apply the `LoadBalancer` service using the below command
+25. Apply the `LoadBalancer` service using the below command
 
     ```sh
      kubectl apply -f nginx-load-balancer-service.yaml
@@ -298,9 +314,9 @@ http://52.10.25.13 (external IP)
 
     ![k8s_svc_p_5](assets/k8s_svc_p_5.png)
 
-25. Since we are using minikube, the external IP will be in `pending` state as
+26. Since we are using minikube, the external IP will be in `pending` state as
     minikube does not support LoadBalancer service.
-26. Recall the `cloud controller manager`
+27. Recall the `cloud controller manager`
     from control plane architecture which is responsible for provisioning
     cloud resources like Load balancers etc.,
 
@@ -308,7 +324,7 @@ http://52.10.25.13 (external IP)
 You can use `kubectl get ep` for getting the endpoints created for the services
 :::
 
-## Labels and Selectors (Important!)
+## Important: Labels and Selectors
 
 `Services` connect to `Pods` using `label selectors`.
 

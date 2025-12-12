@@ -172,13 +172,10 @@ Let's see what `Deployment` is and how it helps to manage pods.
 
 :::tip
 
-1. You can also use this shortcut to create `deployment.yaml` using imperative command
-   and generate yaml file directly. Note that this command only generates the
-   yaml file, it doesn't apply the deployment to the cluster.
+1. A short command to check pods, deployments etc., is
 
    ```sh
-   kubectl create deployment nginx-deployment --image=nginx  --replicas=3
-    --dry-run=client -o yaml > deploy.yaml
+   kubectl get all
    ```
 
 :::

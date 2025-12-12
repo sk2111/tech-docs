@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 sidebar_label: Diving Deep into K8's World
 ---
 
@@ -8,7 +8,7 @@ sidebar_label: Diving Deep into K8's World
 1. In the previous section we saw a high level overview of k8's architecture
    & also `pods`, `Deployments` & `Namespaces` concepts.
 2. By now you must be thinking, Hey! this is great, but are `pods`, `deployments`
-   & `namespaces` the only concepts in k8's ?
+   & `namespaces` are the only concepts in k8's ?
 3. Some of you might be wondering, how do we expose our applications
    running inside k8's to the outside world?
 4. To answer your **questions**, k8's has **answers** (K8's is really awesome!)
