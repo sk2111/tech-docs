@@ -87,6 +87,8 @@ Let's see what `Deployment` is and how it helps to manage pods.
    kubectl get pods -o wide
    ```
 
+   ![k8s_deployment_2_1](assets/k8's_deployment_2_1.png)
+
 9. Now let run this command & analyze the deployment details
 
    ```sh
@@ -102,6 +104,8 @@ Let's see what `Deployment` is and how it helps to manage pods.
     ```sh
     kubectl delete deployment nginx-deployment
     ```
+
+    ![k8s_deployment_2_2](assets/k8's_deployment_2_2.png)
 
 ## Exercise Deployment using YAML
 
@@ -163,6 +167,8 @@ Let's see what `Deployment` is and how it helps to manage pods.
    ```sh
     kubectl get pods -o wide
    ```
+
+   ![k8s_deployment_2_3](assets/k8's_deployment_2_3.png)
 
 :::tip
 
