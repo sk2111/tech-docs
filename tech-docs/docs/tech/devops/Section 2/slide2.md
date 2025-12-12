@@ -22,8 +22,8 @@ let's look into the high level architecture of k8's
    1. **API Server**: The front-end for the Kubernetes control plane. It exposes
       the Kubernetes API & is the entry point for all the REST commands used to
       control the cluster.
-   2. **etcd**: A consistent and highly-available key value store used as Kubernetes'
-      backing store for all cluster data.
+   2. **etcd**: A consistent and highly-available key value store used as Kubernetes
+      backlog store for all cluster data.
    3. **Controller Manager**: Runs controller processes. A controller is a small
       program that watches the cluster and makes sure things are in the desired state
       (E.g node controller, pod controller etc.,)
@@ -44,9 +44,10 @@ let's look into the high level architecture of k8's
       it maintains network rules & handles routing of traffic to Pods from
       inside or outside the cluster.
    3. **Container Runtime (CRI)**: The software that is responsible for running
-      containers (E.g containerd, docker etc.,)
+      containers (E.g containerd, docker etc.,). K8's supports multiple container
+      runtimes through the Container Runtime Interface (CRI).
    4. **Pods**: The smallest and simplest Kubernetes object. A pod represents
-      a single instance of a running process in your cluster and can contain
-      one or more containers.
+      a single instance of a running process/application in your cluster and
+      can contain one or more containers.
 
    ![k8s_arch_3](assets/k8's_arch_3.png)
