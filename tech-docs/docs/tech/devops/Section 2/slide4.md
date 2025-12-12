@@ -12,12 +12,11 @@ sidebar_label: K8's Namespaces
 
 ## Understanding K8's Namespaces
 
-1. As of now, we ave been using the `default` namespace for all our deployments.
-2. A `Namespace` is a way to divide cluster resources between multiple users
+1. A `Namespace` is a way to divide cluster resources between multiple users
    (teams/projects).
-3. Namespaces provide a isolated scope. You can use namespaces to separate environments
+2. Namespaces provide a isolated scope. You can use namespaces to separate environments
    between the different teams within the same cluster.
-4. You can see all the existing namespaces in the cluster using the below command:
+3. You can see all the existing namespaces in the cluster using the below command:
 
    ```sh
    kubectl get namespaces
@@ -25,19 +24,22 @@ sidebar_label: K8's Namespaces
 
    ![k8's_namespace_1](assets/k8's_namespace_1.png)
 
-5. You can create a namespace using the below command:
+4. As of now, we ave been using the `default` namespace for all our deployments.
+5. By default, if we don't specify any namespace, all the resources are created
+   in the `default` namespace.
+6. You can create a namespace using the below command:
 
    ```sh
    kubectl create namespace project-stellar-dev
    ```
 
-6. Let's create a deployment in the newly created namespace using the below command:
+7. Let's create a deployment in the newly created namespace using the below command:
 
    ```sh
    kubectl create deployment nginx-deployment --image=nginx --replicas=2 -n project-stellar-dev
    ```
 
-7. Now verify the deployment and pods are created and running in the
+8. Now verify the deployment and pods are created and running in the
    `project-stellar-dev` namespace using the below commands:
 
    ```sh
@@ -46,13 +48,13 @@ sidebar_label: K8's Namespaces
 
    ![k8's_namespace_2](assets/k8's_namespace_2.png)
 
-8. For this workshop, we can use the `default` namespace. But in production,
+9. For this workshop, we can use the `default` namespace. But in production,
    it's a good practice to create separate namespaces for different teams
    or projects.
 
 :::tip[Production tip]
 
-1. We should not deploy directly to `default` namespace, instead we must
-   create separate namespaces for different teams or projects.
+1. In production, we should not deploy directly to `default` namespace, instead
+   we must create separate namespaces for different teams or projects.
 
 :::
