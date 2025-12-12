@@ -91,7 +91,7 @@ http://<node-ip>:30080/
 Example:
 
 ```sh
-http://52.10.25.13 (external IP)
+http://52.10.25.13 (external Public IP)
 ```
 
 ## Time to Practice
@@ -200,33 +200,38 @@ http://52.10.25.13 (external IP)
       type: ClusterIP
     ```
 
-11. Lets delete the previous service
+11. Quick question: How does above service know which pods to route the traffic
+    to ?
+
+    Answer: Using `label selectors`
+
+12. Lets delete the previous service
 
     ```sh
      kubectl delete service nginx-deployment
     ```
 
-12. Apply the service using the below command
+13. Apply the service using the below command
 
     ```sh
      kubectl apply -f nginx-service.yaml
     ```
 
-13. Verify the service is created using the below command
+14. Verify the service is created using the below command
 
     ```sh
      kubectl get services
     ```
 
-14. Now lets describe the service to see the details
+15. Now lets describe the service to see the details
 
     ```sh
      kubectl describe service nginx-cluster-ip
     ```
 
-15. You can see the service created endpoints for all the pods in the nodes
+16. You can see the service created endpoints for all the pods in the nodes
 
-16. To debug whether the `service` created & working we can use minikube
+17. To debug whether the `service` created & working we can use minikube
     service command
 
     ```sh
@@ -237,7 +242,7 @@ http://52.10.25.13 (external IP)
     minikube service nginx-deployment
     ```
 
-17. Lets create a `NodePort` service using the below yaml file `nginx-node-port-service.yaml`
+18. Lets create a `NodePort` service using the below yaml file `nginx-node-port-service.yaml`
 
     ```yaml
     apiVersion: v1
@@ -257,31 +262,31 @@ http://52.10.25.13 (external IP)
           nodePort: 30080
     ```
 
-18. Delete all the previous service
+19. Delete all the previous service
 
     ```sh
      kubectl delete service nginx-cluster-ip
     ```
 
-19. Apply the `NodePort` service using the below command
+20. Apply the `NodePort` service using the below command
 
     ```sh
      kubectl apply -f nginx-node-port-service.yaml
     ```
 
-20. Now we use the `minikube` service command to verify the service is working
+21. Now we use the `minikube` service command to verify the service is working
 
     ```sh
      minikube service nginx-node-port
     ```
 
-21. You should see the nginx welcome page in your browser
+22. You should see the nginx welcome page in your browser
 
-22. Unfortunately, we cannot create `LoadBalancer` service in minikube as it requires
+23. Unfortunately, we cannot create `LoadBalancer` service in minikube as it requires
     `cloud provider integration`. Let's see that in action when we deploy in
     cloud provider like `Azure`.
 
-23. For completeness, here is the yaml for `LoadBalancer` service
+24. For completeness, here is the yaml for `LoadBalancer` service
 
     ```yaml
     apiVersion: v1
@@ -300,13 +305,13 @@ http://52.10.25.13 (external IP)
       type: LoadBalancer
     ```
 
-24. Lets delete the previous service
+25. Lets delete the previous service
 
     ```sh
      kubectl delete service nginx-node-port
     ```
 
-25. Apply the `LoadBalancer` service using the below command
+26. Apply the `LoadBalancer` service using the below command
 
     ```sh
      kubectl apply -f nginx-load-balancer-service.yaml
@@ -314,9 +319,9 @@ http://52.10.25.13 (external IP)
 
     ![k8s_svc_p_5](assets/k8s_svc_p_5.png)
 
-26. Since we are using minikube, the external IP will be in `pending` state as
+27. Since we are using minikube, the external IP will be in `pending` state as
     minikube does not support LoadBalancer service.
-27. Recall the `cloud controller manager`
+28. Recall the `cloud controller manager`
     from control plane architecture which is responsible for provisioning
     cloud resources like Load balancers etc.,
 
@@ -338,11 +343,22 @@ selector:
 1. Any Pod with `app: myapp` will automatically be part of the Service’s backend.
 2. This allows Kubernetes to dynamically add/remove pods as Deployment scales up/down.
 
-## Real world Example
+## Example Architecture
 
-Web application with frontend, backend & database
+Let's say you have a python App app running in k8s cluster
+& it also needs to communicate to Node js backend service.
 
 ![k8s_svc_2](assets/k8s_svc_2.png)
+
+:::important
+
+1. You can communicate with service name inside the cluster.
+2. For example, python app can reach the backend nodejs service using `http://nodejs:4000`
+   (assuming nodejs service is named `nodejs` and running on port `4000`)
+3. This is because k8s has built-in DNS which resolves service names to their
+   cluster IPs.
+
+:::
 
 ## Summary
 
@@ -354,5 +370,3 @@ Web application with frontend, backend & database
    1. ClusterIP → inside cluster
    2. NodePort → node-level port
    3. LoadBalancer → public access via cloud (k8s use cloud controller manager)
-6. You also have a good understanding on how real world applications are architected
-   using multiple services.

@@ -29,8 +29,10 @@ what we have learned so far.
    docker build -t <your-dockerhub-username>/<image-name>:<tag> .
    ```
 
+   Example:
+
    ```sh
-    docker build -t sathish1996/node-app:1.0.0 .
+   docker build -t sathish1996/node-app:1.0.0 .
    ```
 
 4. Push the docker image to docker hub using the below command
@@ -39,12 +41,60 @@ what we have learned so far.
    docker push <your-dockerhub-username>/<image-name>:<tag>
    ```
 
+   Example:
+
    ```sh
-    docker push sathish1996/node-app:1.0.0
+   docker push sathish1996/node-app:1.0.0
    ```
 
 5. Now create a deployment yaml file `deployment.yaml` & `service.yaml` file &
    use the uploaded docker image in the deployment file.
+
+   deployment.yaml
+
+   ```yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: backend
+     labels:
+       app: backend
+   spec:
+     replicas: 3
+     selector:
+       matchLabels:
+         app: backend
+     template:
+       metadata:
+         labels:
+           app: backend
+       spec:
+         containers:
+           - image: sathish1996/node-app:1.0.0
+             name: backend
+             ports:
+               - containerPort: 4000
+   ```
+
+   service.yaml
+
+   ```yaml
+   apiVersion: v1
+   kind: Service
+   metadata:
+     name: backend
+     labels:
+       app: backend
+   spec:
+     selector:
+       app: backend
+     type: NodePort
+     ports:
+       - port: 4000
+         protocol: TCP
+         targetPort: 4000
+         nodePort: 30080
+   ```
 
 6. Apply the deployment using the below command
 

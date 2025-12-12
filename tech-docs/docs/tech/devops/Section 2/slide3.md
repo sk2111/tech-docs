@@ -131,6 +131,8 @@ Let's see what `Deployment` is and how it helps to manage pods.
          containers:
            - image: nginx
              name: nginx
+             ports:
+               - containerPort: 80
    ```
 
    ![k8s_deployment](assets/k8s_deployment.png)
