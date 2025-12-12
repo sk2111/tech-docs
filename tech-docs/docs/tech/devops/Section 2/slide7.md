@@ -128,7 +128,32 @@ what we have learned so far.
 11. Watchout for common issues like `image pull issues, wrong image name/tag,
 container port is correctly mapped with the service target port`.
 
-12. Congrats you have successfully deployed your first app in k8's cluster!
+12. Now lets create a busybox pod to test the network connectivity to the
+    backend service.
+
+    Create a busybox pod using the below command
+
+    ```sh
+    kubectl run busybox --image=busybox --command -- sleep 3600
+    ```
+
+    Exec into the busybox pod using the below command
+
+    ```sh
+    kubectl exec -it busybox -- sh
+    ```
+
+    Now inside the busybox pod use wget or curl to test the connectivity to the
+    backend service using the service name and port.
+
+    ```sh
+    wget -qO- http://backend:4000
+    ```
+
+    You should be able to see the response from the backend service & this shows
+    that the service discovery is working fine.
+
+13. Congrats you have successfully deployed your first app in k8's cluster!
 
 :::tip
 

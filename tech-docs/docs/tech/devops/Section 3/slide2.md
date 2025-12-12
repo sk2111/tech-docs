@@ -6,7 +6,7 @@ sidebar_label: K8's Config Maps
 # K8's Config Maps
 
 1. K8's Env are good but what if we have large number of configuration values
-   or you need to share across multiple `deployment yamls`?
+   or you need to share across multiple `deployment.yaml` files across services?
 2. In K8's, ConfigMaps are used to store non-confidential configuration data in
    key-value pairs.
 3. ConfigMaps allow you to decouple configuration artifacts from image content
@@ -32,23 +32,23 @@ sidebar_label: K8's Config Maps
    apiVersion: apps/v1
    kind: Deployment
    metadata:
-     name: node-app
+     name: backend
      labels:
-       app: node-app
+       app: backend
    spec:
      replicas: 3
      selector:
        matchLabels:
-         app: node-app
+         app: backend
      template:
        metadata:
          labels:
-           app: node-app
+           app: backend
        spec:
          containers:
            - image: sathish1996/node-app:1.1.1
              imagePullPolicy: Always
-             name: node-app
+             name: backend
              ports:
                - containerPort: 4000
              env:
@@ -70,7 +70,8 @@ sidebar_label: K8's Config Maps
     kubectl apply -f configmap.yaml
    ```
 
-8. Now update the deployment yaml to use configmap as shown above & apply the deployment using the below command
+8. Now update the deployment yaml to use configmap as shown above & apply
+   the deployment using the below command
 
    ```sh
     kubectl apply -f deployment.yaml
@@ -102,30 +103,30 @@ sidebar_label: K8's Config Maps
 
 ## Better way to manage configmaps
 
-1. Instead of passing each key value pair in the configmap yaml, you can
+1. Instead of passing each key value pair in the `configmap.yaml`, you can
    pass a whole key values using the below command
 
    ```yaml
    apiVersion: apps/v1
    kind: Deployment
    metadata:
-     name: node-app
+     name: backend
      labels:
-       app: node-app
+       app: backend
    spec:
      replicas: 3
      selector:
        matchLabels:
-         app: node-app
+         app: backend
      template:
        metadata:
          labels:
-           app: node-app
+           app: backend
        spec:
          containers:
            - image: sathish1996/node-app:1.0.0
              imagePullPolicy: Always
-             name: node-app
+             name: backend
              ports:
                - containerPort: 4000
              envFrom:
@@ -133,7 +134,8 @@ sidebar_label: K8's Config Maps
                    name: app-config
    ```
 
-2. This will pass all the key value pairs from the configmap as environment variables to the pod.
+2. This will pass all the key value pairs from the configmap as environment
+   variables to the pod.
 3. Apply the deployment using the below command
 
    ```sh
@@ -146,9 +148,11 @@ sidebar_label: K8's Config Maps
     kubectl get pods
    ```
 
-5. Access the application using the service & minikube service URL & verify the response contains the configmap values.
+5. Access the application using the service & minikube service URL & verify the
+   response contains the configmap values.
 
-6. **Tip**: To debug the environment variables in the pod, you can exec into the pod and run the `printenv` command.
+6. **Tip**: To debug the environment variables in the pod, you can exec into
+   the pod and run the `printenv` command.
 
    ```sh
     kubectl exec -it <pod-name> -- sh

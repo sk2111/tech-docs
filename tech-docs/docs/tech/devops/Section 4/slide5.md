@@ -12,15 +12,16 @@ sidebar_label: K8's Zero to Hero Exercise
    and a database (Postgres or Redis)
 4. The frontend need to communicate with the backend, and the backend needs to
    communicate with the database.
-5. It can be a simple application like a TODO app, a blog or any other web
+5. It can be a simple application like a TODO app or any other web
    application of your choice.
 6. The main goal of this exercise is to test your understanding of K8's concepts
    and your ability to deploy and manage applications on K8's.
 7. You need to create the necessary `deployments, services,
-Secrets, ConfigMaps, HPA, resource limits, persistent volumes etc.,`.
+Secrets, ConfigMaps, HPA, resource limits, persistent volumes, liveness and
+readiness probes, StatefulSets etc.,`.
 8. You can use any web application of your choice, but make sure it has a
    frontend, backend, and a database component.
-9. Good luck and happy deploying!
+9. Good luck and happy k8's!
 
 :::tip[Hints]
 
@@ -30,13 +31,16 @@ Secrets, ConfigMaps, HPA, resource limits, persistent volumes etc.,`.
 4. Implement `Horizontal Pod Autoscaling (HPA)` to scale your application based
    on resource utilization.
 5. Use `Persistent Volumes` to store data for your database.
-6. Expose your frontend using a `Service` of type `LoadBalancer` or `NodePort`.
-7. Refer to the previous sections for examples and guidance on how to create
+6. Expose your frontend using a `Service` of type `NodePort` for debugging.
+7. Use `Liveness` and `Readiness` probes to monitor the health of your pods.
+8. Use `StatefulSets` if your database requires stable network identities and
+   persistent storage.
+9. Refer to the previous sections for examples and guidance on how to create
    each component.
-8. You can use single yaml file with multiple documents separated by `---` & have
-   all your deployment, services etc., or multiple yaml files as per your preference.
-9. **Optional** - You can also try deploying using `Helm Charts` for
-   better management. Read about Helm in the [Helm Docs](https://helm.sh/docs/).
+10. You can use single yaml file with multiple documents separated by `---` & have
+    all your deployment, services etc., or multiple yaml files as per your preference.
+11. **Optional** - You can also try deploying using `Helm Charts` for
+    better management. Read about Helm in the [Helm Docs](https://helm.sh/docs/).
 
 ## Example Architecture
 

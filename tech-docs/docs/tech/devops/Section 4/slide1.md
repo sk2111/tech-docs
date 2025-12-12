@@ -12,7 +12,7 @@ sidebar_label: K8's Volumes
 4. Volumes allow data to persist beyond the lifecycle of a pod, enabling data
    sharing between containers in a pod and across pod restarts.
 5. K8's supports various types of volumes like `emptyDir`, `hostPath`,
-   `persistentVolumeClaim` etc.
+   `StorageClass` etc.
 
 ## Ephemeral Volumes - emptyDir
 

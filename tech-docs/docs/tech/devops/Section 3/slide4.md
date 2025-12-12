@@ -105,7 +105,7 @@ sidebar_label: K8's Scaling & Resource
 
 ![k8s_scaling_types](./assets/k8s_scaling_types.png)
 
-## How K8's collects metrics for start HPA & VPA?
+## How K8's collects metrics to start HPA & VPA?
 
 1. K8's uses the Metrics Server to collect resource usage metrics from nodes and
    pods in the cluster.
@@ -128,23 +128,23 @@ sidebar_label: K8's Scaling & Resource
    apiVersion: apps/v1
    kind: Deployment
    metadata:
-     name: node-app
+     name: backend
      labels:
-       app: node-app
+       app: backend
    spec:
      replicas: 2
      selector:
        matchLabels:
-         app: node-app
+         app: backend
      template:
        metadata:
          labels:
-           app: node-app
+           app: backend
        spec:
          containers:
            - image: sathish1996/node-app:1.0.0
              imagePullPolicy: Always
-             name: node-app
+             name: backend
              ports:
                - containerPort: 4000
              resources:
@@ -194,13 +194,13 @@ sidebar_label: K8's Scaling & Resource
 6. Let's port forward the deployment using below command & verify in browser
 
    ```bash
-   kubectl port-forward deployment/node-app 5001:4000
+   kubectl port-forward deployment/backend 5001:4000
    ```
 
 7. Now, we can create HPA for the deployment using below command:
 
    ```bash
-    kubectl autoscale deployment node-app --min=1 --max=5 --cpu-percent=3
+    kubectl autoscale deployment backend --min=1 --max=5 --cpu-percent=3
    ```
 
    ![k8s_hpa_5](./assets/k8s_hpa_5.png)

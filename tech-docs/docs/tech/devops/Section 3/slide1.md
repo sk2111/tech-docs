@@ -17,23 +17,23 @@ sidebar_label: K8's Env
    apiVersion: apps/v1
    kind: Deployment
    metadata:
-     name: node-app
+     name: backend
      labels:
-       app: node-app
+       app: backend
    spec:
      replicas: 3
      selector:
        matchLabels:
-         app: node-app
+         app: backend
      template:
        metadata:
          labels:
-           app: node-app
+           app: backend
        spec:
          containers:
            - image: sathish1996/node-app:1.0.0
              imagePullPolicy: Always
-             name: node-app
+             name: backend
              ports:
                - containerPort: 4000
              env:
@@ -48,24 +48,44 @@ sidebar_label: K8's Env
 1. You can edit the python app or node js app from previous practice to read the
    environment variable `APP_NAME` and return it in the response.
 
+   ```js
+   app.get("/", (req, res) => {
+     const env = {
+       APP_NAME: process.env.APP_NAME,
+       LOG_LEVEL: process.env.LOG_LEVEL,
+     };
+
+     res.json({
+       message: "Environment Variables",
+       env: env,
+     });
+   });
+   ```
+
 2. Rebuild the docker image and push it to docker hub.
 3. Update the deployment yaml file to include the env variable as shown above.
-4. Apply the deployment using the below command
+4. Cleanup the existing deployment using the below command
 
    ```sh
-    kubectl apply -f deployment.yaml
+   kubectl delete deployment --all
    ```
 
-5. Verify the pods are recreated using the below command
+5. Apply the new deployment using the below command
 
    ```sh
-    kubectl get pods
+   kubectl apply -f deployment.yaml
    ```
 
-6. Access the application using the service & minikube service URL & verify the
+6. Verify the pods are recreated using the below command
+
+   ```sh
+   kubectl get pods
+   ```
+
+7. Access the application using the service & minikube service URL & verify the
    response contains the environment variable value.
 
-7. **Tip**: To debug the environment variables in the pod, you can exec into the
+8. **Tip**: To debug the environment variables in the pod, you can exec into the
    pod and run the `printenv` command.
 
    ```sh

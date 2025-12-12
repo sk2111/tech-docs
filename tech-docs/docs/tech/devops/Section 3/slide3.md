@@ -48,8 +48,8 @@ sidebar_label: K8's Secrets
 1. Let's clean up all the existing deployments & services from previous practice.
 
    ```sh
-   kubectl delete deployment <name-of-deployment>
-   kubectl delete service <name-of-service>
+   kubectl delete deployment --all
+   kubectl delete service --all
    ```
 
 2. Now lets replace the deployment image with the private image from docker hub.
@@ -58,23 +58,23 @@ sidebar_label: K8's Secrets
    apiVersion: apps/v1
    kind: Deployment
    metadata:
-     name: node-app
+     name: backend
      labels:
-       app: node-app
+       app: backend
    spec:
      replicas: 3
      selector:
        matchLabels:
-         app: node-app
+         app: backend
      template:
        metadata:
          labels:
-           app: node-app
+           app: backend
        spec:
          containers:
            - image: sathish1996/my-private-repo:1.0.0
              imagePullPolicy: Always
-             name: node-app
+             name: backend
              ports:
                - containerPort: 4000
              envFrom:
@@ -173,25 +173,25 @@ sidebar_label: K8's Secrets
    apiVersion: apps/v1
    kind: Deployment
    metadata:
-     name: node-app
+     name: backend
      labels:
-       app: node-app
+       app: backend
    spec:
      replicas: 3
      selector:
        matchLabels:
-         app: node-app
+         app: backend
      template:
        metadata:
          labels:
-           app: node-app
+           app: backend
        spec:
          imagePullSecrets:
            - name: my-private-secret
          containers:
            - image: sathish1996/my-private-repo:1.0.0
              imagePullPolicy: Always
-             name: node-app
+             name: backend
              ports:
                - containerPort: 4000
              envFrom:
