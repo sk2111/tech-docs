@@ -209,6 +209,10 @@ sidebar_label: K8's Scaling & Resource
    set the HPA with min as 1 and max as 5, the hpa will be re-adjusted to 1
    pod. This will take some time to reflect in minikube
 
+   ```sh
+   kubectl get hpa -w
+   ```
+
    ![k8s_hpa_6](./assets/k8s_hpa_6.png)
    ![k8s_hpa_6.5](./assets/k8s_hpa_6.5.png)
 
