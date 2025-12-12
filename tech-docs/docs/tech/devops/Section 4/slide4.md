@@ -73,7 +73,7 @@ sidebar_label: K8's Additional Concepts
     kubectl logs -f <pod-name>
     ```
 
-## Kubernetes StatefulSets - Managing State in K8's
+## k8's StatefulSets - Managing State in K8's
 
 1. In Kubernetes, most workloads are stateless, meaning they don't retain any
    data between restarts.
@@ -246,3 +246,114 @@ sidebar_label: K8's Additional Concepts
      - apiGroups: [""]
        resources: ["pods"]
    ```
+
+## Using K8's Secrets to pull images from Private Docker Repositories
+
+1. Till now we pulled the docker images from public docker hub repos. But in
+   real time scenarios, we may have private docker repos to store our docker images.
+
+2. Lets first create a private repo in docker hub & push a sample private docker
+   image. Go to docker hub & create a new private repo.
+
+3. You can push the backend service image from earlier section practice to the
+   private repo.
+
+![k8s_secrets_1](./assets/k8s_secret_1.png)
+![k8s_secrets_2](./assets/k8s_secret_2.png)
+
+### Let's create a new deployment
+
+1. Let's clean up all the existing deployments & services from previous practice.
+
+   ```sh
+   kubectl delete deployment --all
+   kubectl delete service --all
+   ```
+
+2. Now lets replace the deployment image with the private image from docker hub.
+
+   ```yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: backend
+     labels:
+       app: backend
+   spec:
+     replicas: 3
+     selector:
+       matchLabels:
+         app: backend
+     template:
+       metadata:
+         labels:
+           app: backend
+       spec:
+         containers:
+           - image: sathish1996/my-private-repo:1.0.0
+             imagePullPolicy: Always
+             name: backend
+             ports:
+               - containerPort: 4000
+             envFrom:
+               - configMapRef:
+                   name: app-config
+   ```
+
+3. Apply the deployment using the below command
+
+   ```sh
+    kubectl apply -f deployment.yaml
+   ```
+
+4. You will notice the pods will be in `ErrorImagePull` state because K8's is
+   not able to pull the private image without authentication.
+
+   ```sh
+    kubectl get pods
+   ```
+
+5. Analyse the error using the below command
+
+   ```sh
+    kubectl describe pod <pod-name>
+   ```
+
+6. To fix this issue, we need to create a secret with docker registry credentials
+   and link it to the deployment.
+
+7. Lets go to docker hub and create a PAT (Personal Access Token) for authentication.
+   ![k8s_secret_pat](./assets/k8s_secret_pat.png)
+
+8. Create a docker secret using the below command
+
+   ```sh
+    kubectl create secret docker-registry my-private-secret --docker-email=your@gmail.com --docker-username=your-username --docker-password=your-docker-pat --docker-server=https://index.docker.io/v2/
+   ```
+
+   ![k8s_secret_pat_1](./assets/k8s_secret_pat_1.png)
+
+9. Verify the secret is created using the below command
+
+   ```sh
+   kubectl get secrets
+   ```
+
+10. Now update the deployment yaml to include the imagePullSecrets section as
+    shown below
+    ![k8s_secret_4](./assets/k8s_secret_4.png)
+
+11. Redeploy the deployment using the below command
+
+    ```sh
+    kubectl apply -f deployment.yaml
+    ```
+
+12. Verify the pods are created and running using the below command
+
+    ```sh
+    kubectl get pods
+    ```
+
+13. Access the application using the service & minikube service URL &
+    verify the app is working fine in browser.
