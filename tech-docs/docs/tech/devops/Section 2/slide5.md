@@ -6,35 +6,38 @@ sidebar_label: Diving Deep into K8's World
 # Diving into K8's World
 
 1. In the previous section we saw a high level overview of k8's architecture
-   & also pods. But pods are just one of the many concepts in k8's.
-2. And like we discussed in earlier section, pods alone cannot solve all the real
-   world problems. For example if a pod goes down due to some reason,
-   there is no way to bring it back up again. Also pods do not provide features like
-   scaling.
-3. To solve these problems, k8's provides higher level abstractions (concepts) on
-   top of pods like `ReplicaSets, Deployments, Services, StatefulSets, Storage etc.,`
+   & also `pods`, `Deployments` & `Namespaces` concepts.
+2. By now you must be thinking, Hey! this is great, but are `pods`, `deployments`
+   & `namespaces` the only concepts in k8's ?
+3. Some of you might be wondering, how do we expose our applications
+   running inside k8's to the outside world?
+4. To answer your **questions**, k8's has **answers** (K8's is really awesome!)
+
+## K8's Concepts Overview
 
 To give you a brief overview of different concepts in k8's
 
 1. Pods
 2. Deployments
-3. Services
-4. ConfigMaps and Secrets
-5. Volumes and Persistent Volumes
-6. StatefulSets
-7. Namespaces
-8. Ingress Controllers
-9. RBAC & Role Bindings
-10. Cron Jobs
-11. Daemon Sets
-12. Jobs
-13. Replication Controllers
-14. Storage Classes
-15. Network Policies
-16. And many more..
+3. Namespaces
+4. Services
+5. ConfigMaps and Secrets
+6. Horizontal Pod Autoscalers
+7. Resource Requests and Limits
+8. Volumes and Persistent Volumes
+9. StatefulSets
+10. RBAC & Role Bindings
+11. Cron Jobs
+12. Daemon Sets
+13. Jobs
+14. Replication Controllers
+15. Storage Classes
+16. Network Policies
+17. Ingress Controllers
+18. And many more..
 
-Each of these concepts solves a specific problem and helps you manage your
-k8's cluster effectively.
+Each of these concepts solves a specific use case and rest assured, we will cover
+your common questions in the upcoming sections.
 
 :::tip[Certification on K8's]
 If you are interest in doing kubernetes certification, please refer to the official
