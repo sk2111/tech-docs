@@ -239,7 +239,7 @@ http://52.10.25.13 (external Public IP)
     ```
 
     ```sh
-    minikube service nginx-deployment
+    minikube service nginx-cluster-ip
     ```
 
 18. Lets create a `NodePort` service using the below yaml file `nginx-node-port-service.yaml`

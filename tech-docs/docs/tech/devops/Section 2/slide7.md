@@ -119,7 +119,7 @@ what we have learned so far.
 9. Expose the service using the below command
 
    ```sh
-   minikube service <service-name>
+   minikube service backend
    ```
 
 10. If everything is done correctly you should be able to see the app running in
