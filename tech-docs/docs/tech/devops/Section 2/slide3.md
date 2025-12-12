@@ -29,12 +29,7 @@ Let's see what `Deployment` is and how it helps to manage pods.
 
 ## Exercise Deployment using Imperative Command
 
-1. First let' clean up the previous pod
-
-   ```sh
-   kubectl delete pod nginx-pod-1
-   ```
-
+1. First let' clean up all the previous pod
    or
 
    ```sh
@@ -86,7 +81,13 @@ Let's see what `Deployment` is and how it helps to manage pods.
    kubectl set image deployment/nginx-deployment nginx=nginx:1.29.0
    ```
 
-8. Now let run this command & analyze the deployment details
+8. You can verify that it performs rolling update
+
+   ```sh
+   kubectl get pods -o wide
+   ```
+
+9. Now let run this command & analyze the deployment details
 
    ```sh
    kubectl get deployments
@@ -96,11 +97,11 @@ Let's see what `Deployment` is and how it helps to manage pods.
    kubectl describe deployment nginx-deployment
    ```
 
-9. Lets delete the pods we need to delete the deployment using the below command
+10. Lets delete the pods we need to delete the deployment using the below command
 
-   ```sh
-   kubectl delete deployment nginx-deployment
-   ```
+    ```sh
+    kubectl delete deployment nginx-deployment
+    ```
 
 ## Exercise Deployment using YAML
 
@@ -128,27 +129,36 @@ Let's see what `Deployment` is and how it helps to manage pods.
              name: nginx
    ```
 
+   ![k8s_deployment](assets/k8s_deployment.png)
+
 2. The `selector` field in Deployment helps to identify the pods that belong
    to the Deployment. So the matching happens based on `labels`.
 
-   ![k8s_deployment](assets/k8s_deployment.png)
-
-3. Save the above yaml file as `deploy.yaml` & run the below command to create the deployment
-
-   ```sh
-    kubectl apply -f deploy.yaml
-   ```
-
-4. Now lets reduce the replicas to 2 in the `deploy.yaml` file, you can edit
-   the `deploy.yaml` file `replicas` field as 2 replicas.
-
-5. Now let's apply the deployment using the below command
+3. Save the above yaml file as `deploy.yaml` & run the below command to create
+   the deployment
 
    ```sh
     kubectl apply -f deploy.yaml
    ```
 
-6. Now verify the deployment and pods are created and running using the below commands
+4. Observe the deployment created pods successfully
+
+   ```sh
+    kubectl get pods
+   ```
+
+   ![k8s_deployment_3_1](assets/k8s_deployment_3_1.png)
+
+5. Now lets reduce the replicas to 2 in the `deploy.yaml` file, you can edit
+   the `deploy.yaml` & save the file.
+
+6. Now let's apply the deployment using the below command
+
+   ```sh
+    kubectl apply -f deploy.yaml
+   ```
+
+7. Now verify the deployment and pods are created and running using the below commands
 
    ```sh
     kubectl get pods -o wide
