@@ -1,42 +1,58 @@
 ---
 sidebar_position: 4
-sidebar_label: Diving Deep into K8's World
+sidebar_label: K8's Namespaces
 ---
 
-# Diving into K8's World
+# Need for K8's Namespace
 
-1. In the previous section we saw a high level overview of k8's architecture
-   & also pods. But pods are just one of the many concepts in k8's.
-2. And like we discussed in earlier section, pods alone cannot solve all the real
-   world problems. For example if a pod goes down due to some reason,
-   there is no way to bring it back up again. Also pods do not provide features like
-   scaling.
-3. To solve these problems, k8's provides higher level abstractions (concepts) on
-   top of pods like `ReplicaSets, Deployments, Services, StatefulSets, Storage etc.,`
+1. Lets say now our organization has multiple teams working on different projects.
+2. All of them are using the same k8's cluster for their deployments.
+3. How do we manage the resources and deployments for different teams/projects?
+4. This is where `Namespaces` come into play.
 
-To give you a brief overview of different concepts in k8's
+## Understanding K8's Namespaces
 
-1. Pods
-2. Deployments
-3. Services
-4. ConfigMaps and Secrets
-5. Volumes and Persistent Volumes
-6. StatefulSets
-7. Namespaces
-8. Ingress Controllers
-9. RBAC & Role Bindings
-10. Cron Jobs
-11. Daemon Sets
-12. Jobs
-13. Replication Controllers
-14. Storage Classes
-15. Network Policies
-16. And many more..
+1. As of now, we ave been using the `default` namespace for all our deployments.
+2. A `Namespace` is a way to divide cluster resources between multiple users
+   (teams/projects).
+3. Namespaces provide a isolated scope. You can use namespaces to separate environments
+   between the different teams within the same cluster.
+4. You can see all the existing namespaces in the cluster using the below command:
 
-Each of these concepts solves a specific problem and helps you manage your
-k8's cluster effectively.
+   ```sh
+   kubectl get namespaces
+   ```
 
-:::tip[Certification on K8's]
-If you are interest in doing kubernetes certification, please refer to the official
-[Kubernetes training website](https://kubernetes.io/training/) for more details.
+   ![k8's_namespace_1](assets/k8's_namespace_1.png)
+
+5. You can create a namespace using the below command:
+
+   ```sh
+   kubectl create namespace project-stellar-dev
+   ```
+
+6. Let's create a deployment in the newly created namespace using the below command:
+
+   ```sh
+   kubectl create deployment nginx-deployment --image=nginx --replicas=2 -n project-stellar-dev
+   ```
+
+7. Now verify the deployment and pods are created and running in the
+   `project-stellar-dev` namespace using the below commands:
+
+   ```sh
+   kubectl get pods -n project-stellar-dev -o wide
+   ```
+
+   ![k8's_namespace_2](assets/k8's_namespace_2.png)
+
+8. For this workshop, we can use the `default` namespace. But in production,
+   it's a good practice to create separate namespaces for different teams
+   or projects.
+
+:::tip[Production tip]
+
+1. We should not deploy directly to `default` namespace, instead we must
+   create separate namespaces for different teams or projects.
+
 :::
