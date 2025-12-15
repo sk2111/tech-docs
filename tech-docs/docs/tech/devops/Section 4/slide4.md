@@ -15,6 +15,7 @@ sidebar_label: Closing Notes
 
 :::danger[Uninstall Rancher Desktop]
 
-Uninstall Rancher Desktop from your system after the workshop - IT team
+Uninstall Rancher Desktop from your system after the workshop or get explicit
+approval- IT team
 
 :::
