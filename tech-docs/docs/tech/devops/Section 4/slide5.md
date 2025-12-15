@@ -9,7 +9,7 @@ sidebar_label: K8's Zero to Hero Exercise
 2. Now you have all the knowledge required to deploy a full stack application on
    Kubernetes.
 3. Your task is to deploy a simple web application that uses a frontend, backend
-   and a database (Postgres or Redis)
+   and a database (Postgres, MySql or MongoDB).
 4. The frontend need to communicate with the backend, and the backend needs to
    communicate with the database.
 5. It can be a simple application like a TODO app or any other web
@@ -19,9 +19,7 @@ sidebar_label: K8's Zero to Hero Exercise
 7. You need to create the necessary `deployments, services,
 Secrets, ConfigMaps, HPA, resource limits, persistent volumes, liveness and
 readiness probes, StatefulSets etc.,`.
-8. You can use any web application of your choice, but make sure it has a
-   frontend, backend, and a database component.
-9. Good luck and happy k8's!
+8. Good luck and happy k8's!
 
 :::tip[Hints]
 
@@ -30,15 +28,18 @@ readiness probes, StatefulSets etc.,`.
 3. Set appropriate `resource requests` and `limits` for your pods.
 4. Implement `Horizontal Pod Autoscaling (HPA)` to scale your application based
    on resource utilization.
-5. Use `Persistent Volumes` to store data for your database.
+5. Use `Persistent Volumes` & `Persistent Volume Claims (PVCs)` to store data for
+   your database.
 6. Expose your frontend using a `Service` of type `NodePort` for debugging.
 7. Use `Liveness` and `Readiness` probes to monitor the health of your pods.
 8. Use `StatefulSets` if your database requires stable network identities and
-   persistent storage.
+   persistent storage. You can use `Deployments` with `pvc` for databases as well.
+   But its a production practice to use databases with `StatefulSets`.
 9. Refer to the previous sections for examples and guidance on how to create
    each component.
-10. You can use single yaml file with multiple documents separated by `---` & have
-    all your deployment, services etc., or multiple yaml files as per your preference.
+10. **Optional** - You can use single yaml file with multiple documents separated
+    by `---` & have all your deployment, services etc., or multiple yaml files
+    as per your preference.
 11. **Optional** - You can also try deploying using `Helm Charts` for
     better management. Read about Helm in the [Helm Docs](https://helm.sh/docs/).
 
@@ -52,7 +53,8 @@ Web application with frontend, backend & database
 
 :::tip[minkube]
 
-1. minikube comes with dashboard which you can use to visualize your deployments, pods, services etc.,
+1. minikube comes with dashboard which you can use to visualize your deployments
+   , pods, services etc.,
 2. To access the dashboard, run `minikube dashboard` command in your terminal,
 
 :::

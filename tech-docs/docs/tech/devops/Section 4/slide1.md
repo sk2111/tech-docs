@@ -89,11 +89,11 @@ sidebar_label: K8's Volumes
    specify size, access modes, and storage class.
 4. It claims a piece of storage from a PV and binds to it.
 5. K8's Controller manages the binding between PVs and PVCs.
-6. Access modes define how the volume can be mounted (e.g., ReadWriteOnce,
-   ReadOnlyMany, ReadWriteMany).
+6. Access modes define how the volume can be mounted (e.g., `ReadWriteOnce,
+ReadOnlyMany, ReadWriteMany`).
 7. Both the PV and PVC must have compatible access modes for successful binding.
-8. Example you cannot bind a PV with ReadWriteOnce access mode to a PVC
-   requesting ReadOnlyMany access mode.
+8. Example you cannot bind a PV with `ReadWriteOnce` access mode to a PVC
+   requesting `ReadOnlyMany` access mode.
 
 ![k8s_pv_1](assets/k8s_pv_1.png)
 
@@ -119,7 +119,7 @@ sidebar_label: K8's Volumes
 
 1. Now let's say you don't need a PVC anymore, what happens to it?
 2. Reclaim policy defines what happens to a PV when its bound PVC is deleted.
-3. Common reclaim policies are `Retain`, `Recycle`, and `Delete`.
+3. Common reclaim policies are `Retain` & `Delete`.
 4. `Retain` keeps the PV and its data intact for manual reclamation. Data is
    preserved.
 5. `Delete` removes the PV and its data from the cluster. Data is lost.
@@ -127,10 +127,10 @@ sidebar_label: K8's Volumes
 6. The reclaim policy is set when the PV is created and can be modified later
    if needed.
 
-## Practice Time (PV, PVC)
+## Practice Time (PV & PVC)
 
-1. As we are in local minikube, Let's try the `hostPath` type to create a
-   persistent volume.
+1. As we are in local minikube, Let's try the to create a
+   persistent volume in minikube nodes.
 2. First let ssh into minikube node to create a directory for volume.
 
    ```sh
@@ -164,11 +164,24 @@ sidebar_label: K8's Volumes
        - ReadWriteOnce
      hostPath:
        path: "/mnt/data"
+     persistentVolumeReclaimPolicy: Retain
+   ```
+
+6. Now apply the above PV configuration.
+
+   ```sh
+   kubectl apply -f pv.yaml
+   ```
+
+7. Verify the PV status.
+
+   ```sh
+   kubectl get pv
    ```
 
    ![k8s_pv_2](assets/k8s_pv_2.png)
 
-6. Now let's create a persistent volume claim to claim the above created PV.
+8. Now let's create a persistent volume claim to claim the above created PV.
 
    ```yaml
    apiVersion: v1
@@ -184,51 +197,63 @@ sidebar_label: K8's Volumes
          storage: 500Mi
    ```
 
-   ![k8s_pv_3](assets/k8s_pv_3.png)
-
-7. Verify the PV and PVC status.
+9. Now apply the above PVC configuration.
 
    ```sh
-   kubectl get pv
-   kubectl get pvc
+   kubectl apply -f pvc.yaml
    ```
 
-8. You should see that the PVC is bound to the PV.
+10. Verify the PV and PVC status.
 
-9. Finally, let's create a pod that uses the above created PVC.
+    ```sh
+    kubectl get pv
+    kubectl get pvc
+    ```
 
-   ```yaml
-   apiVersion: v1
-   kind: Pod
-   metadata:
-     name: nginx-app
-     labels:
-       app: nginx-app
-   spec:
-     volumes:
-       - name: nginx-storage
-         persistentVolumeClaim:
-           claimName: pvc-volume-claim
-     containers:
-       - name: nginx
-         image: nginx
-         volumeMounts:
-           - name: nginx-storage
-             mountPath: /usr/share/nginx/html
-         ports:
-           - containerPort: 80
-   ```
+    ![k8s_pv_3](assets/k8s_pv_3.png)
 
-10. Now let's verify if the data is persistent by accessing the nginx server.
+11. You should see that the PVC is bound to the PV.
+
+12. Finally, let's create a pod that uses the above created PVC.
+
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: nginx-app
+      labels:
+        app: nginx-app
+    spec:
+      volumes:
+        - name: nginx-storage
+          persistentVolumeClaim:
+            claimName: pvc-volume-claim
+      containers:
+        - name: nginx
+          image: nginx
+          volumeMounts:
+            - name: nginx-storage
+              mountPath: /usr/share/nginx/html
+          ports:
+            - containerPort: 80
+    ```
+
+13. Now apply the above pod configuration.
+
+    ```sh
+    kubectl apply -f pod.yaml
+    ```
+
+14. Now let's verify if the data is persistent by accessing the nginx server.
 
     ```sh
     kubectl port-forward pod/nginx-app 8080:80
     ```
 
-11. Open your browser and navigate to `http://localhost:8080` to see the
+15. Open your browser and navigate to `http://localhost:8080` to see the
     "Persistent Data" content.
 
-12. Now delete the pod and recreate it to verify data persistence.
+16. Now delete the pod and recreate it to verify data persistence.
 
     ```sh
     kubectl delete pod nginx-app
@@ -242,7 +267,7 @@ sidebar_label: K8's Volumes
     kubectl port-forward pod/nginx-app 8080:80
     ```
 
-13. Open your browser again and navigate to `http://localhost:8080` to see that
+17. Open your browser again and navigate to `http://localhost:8080` to see that
     the "Persistent Data" content is still there, confirming that the data
     persisted across pod restarts or deletions.
 

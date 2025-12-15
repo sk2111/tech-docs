@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 sidebar_label: K8's Additional Concepts
 ---
 
@@ -17,7 +17,7 @@ sidebar_label: K8's Additional Concepts
    Kubernetes will restart the pod.
 6. **Readiness Probe** checks if your application is ready to serve traffic.
    If it fails, Kubernetes will stop sending traffic to the pod until it passes again.
-7. You can configure these probes using HTTP requests, TCP sockets, or command execution.
+7. You can configure these probes using HTTP requests, TCP sockets or command execution.
 8. Here's an example of how to define liveness and readiness probes in a Kubernetes
    deployment YAML:
 
@@ -64,7 +64,7 @@ sidebar_label: K8's Additional Concepts
 9. You can deploy this YAML using
 
    ```sh
-    kubectl apply -f <filename>.yaml.
+    kubectl apply -f deployment.yaml.
    ```
 
 10. Observe the log output to understand how probes checks periodically.
@@ -72,46 +72,6 @@ sidebar_label: K8's Additional Concepts
     ```sh
     kubectl logs -f <pod-name>
     ```
-
-## k8's StatefulSets - Managing State in K8's
-
-1. In Kubernetes, most workloads are stateless, meaning they don't retain any
-   data between restarts.
-2. We use `Deployments` for such stateless applications.
-3. However, some applications require `persistent storage and stable network identities`.
-4. Examples include databases like MySQL, PostgreSQL, and
-   distributed systems like Kafka.
-5. This is where **StatefulSets** come into play.
-6. A StatefulSet is a Kubernetes resource that manages the deployment and scaling
-   of stateful applications.
-7. It provides guarantees about the ordering and uniqueness of pods.
-8. Key features of StatefulSets:
-   - Stable, unique network identifiers for each pod.
-   - Stable, persistent storage using PersistentVolumeClaims (PVCs).
-   - Ordered, graceful deployment and scaling of pods.
-   - Ordered, automated rolling updates.
-9. Here's an example of a StatefulSet definition for a simple MySQL database:
-
-   ```yaml
-   apiVersion: apps/v1
-   kind: StatefulSet
-   metadata:
-     name: mysql
-   spec:
-     serviceName: "mysql"
-     replicas: 3
-     selector:
-       matchLabels:
-         app: mysql
-     template:
-       metadata:
-         labels:
-           app: mysql
-       spec:
-         containers:
-           - name: mysql
-             image: mysql:5.7
-   ```
 
 ## K8's Job & CronJob
 
@@ -189,42 +149,52 @@ sidebar_label: K8's Additional Concepts
                     command: ["sh", "-c", "while true; do echo Hello from DaemonSet; sleep 60; done"]
    ```
 
+## k8's StatefulSets - Managing State
+
+1. In Kubernetes, most workloads are stateless, meaning they don't retain any
+   data between restarts.
+2. We use `Deployments` for such stateless applications.
+3. However, some applications require `persistent storage and stable network identities`.
+4. Examples include databases like MySQL, PostgreSQL, and
+   distributed systems like Kafka.
+5. This is where **StatefulSets** come into play.
+6. A StatefulSet is a Kubernetes resource that manages the deployment and scaling
+   of stateful applications.
+7. It provides guarantees about the ordering and uniqueness of pods.
+8. Key features of StatefulSets:
+   - Stable, unique network identifiers for each pod.
+   - Stable, persistent storage using PersistentVolumeClaims (PVCs).
+   - Ordered, graceful deployment and scaling of pods.
+   - Ordered, automated rolling updates.
+9. Here's an example of a StatefulSet definition for a simple MySQL database:
+
+   ```yaml
+   apiVersion: apps/v1
+   kind: StatefulSet
+   metadata:
+     name: mysql
+   spec:
+     serviceName: "mysql"
+     replicas: 3
+     selector:
+       matchLabels:
+         app: mysql
+     template:
+       metadata:
+         labels:
+           app: mysql
+       spec:
+         containers:
+           - name: mysql
+             image: mysql:5.7
+   ```
+
 ## K8's Tolerations & Affinities
 
 1. Tolerations and Affinities are used to control pod scheduling in Kubernetes.
 2. Tolerations allow pods to be scheduled on nodes with specific taints.
 3. Affinities allow you to define rules for pod placement based on node labels
    and other criteria.
-4. Here's an example of using tolerations and affinities in a pod definition:
-
-   ```yaml
-    apiVersion: v1
-    kind: Pod
-    metadata:
-      name: example-pod
-    spec:
-      containers:
-        - name: example
-          image: busybox
-          command: ["sh", "-c", "while true; do echo Hello from Pod; sleep 60; done"]
-        tolerations:
-        - key: "key1"
-          operator: "Equal"
-          value: "value1"
-          effect: "NoSchedule"
-        affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: "disktype"
-                operator: In
-                values:
-                - ssd
-   ```
-
-5. In this example, the pod will tolerate nodes with the specified taint and
-   will only be scheduled on nodes with the label `disktype=ssd`.
 
 ## K8's Roles & RoleBindings
 
