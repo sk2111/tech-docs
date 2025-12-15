@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 3
 sidebar_label: K8's Zero to Hero Exercise
 ---
 
