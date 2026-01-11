@@ -9,24 +9,25 @@ Your mind, body & soul are the well-being are the foundation of a good life.
 You can have all the money and success in the world, but without health,
 it's hard to enjoy them
 
-## Take care of your body
-
 ### Beware of food we eat
 
 All the diseases we have today are because of the food we eat.
 
-1. Today we go to supermarkets & buy packaged food.
-   1. All you need is to read the ingredients list.
-   2. If it has preservatives, artificial colors, or flavors, avoid it.
-   3. Easy way is to see whether chemicals are listed in the ingredients.
-   4. There will be chemical number codes like E100, E200, etc.
-   5. Other harmful chemicals are MSG, Aspartame, High Fructose Corn Syrup (HFCS)
-   6. Watchout for code names like Sodium Nitrate, Sodium Benzoate, Potassium Sorbate,
+1. **Today we go to supermarkets & buy packaged food.**
+
+   1. All you need is to read the ingredients list. If it has preservatives,
+      artificial colors, or flavors, avoid it.
+   2. Easy way is to see whether chemicals are listed in the ingredients.
+   3. There will be chemical number codes like E100, E200, etc.
+   4. Other harmful chemicals are MSG, Aspartame, High Fructose Corn Syrup (HFCS)
+   5. Watchout for code names like Sodium Nitrate, Sodium Benzoate, Potassium Sorbate,
       E200, E211, E202, E220, etc.
-   7. If you don't find any ingredients that are used in home, then avoid that food.
-   8. Whenever you pick a packaged food, think whether you can make it in home with
+   6. If you don't find any ingredients that are used in home, then avoid that food.
+   7. Whenever you pick a packaged food, think whether you can make it in home with
       simple ingredients. If not read the ingredients list carefully.
-2. What about the food we eat in restaurants?
+
+2. **What about the food we eat in restaurants?**
+
    1. Samosa, Bread, Sandwiches, Burgers, Pizza, Noodles, Pasta, etc.
    2. Most restaurants use processed ingredients to save cost.
    3. They use refined oils, maida, and artificial colors to make food look attractive.
@@ -39,7 +40,8 @@ All the diseases we have today are because of the food we eat.
    9. Maida, Sugar & Refined oils make addictive
    10. Maida causes all digestive issues & many disease
    11. Refined oils cause heart diseases by blocking arteries.
-3. So what should we eat?
+
+3. **So what should we eat?**
    1. **TBD**
 
 :::tip
@@ -52,19 +54,20 @@ Avoid outside food & prefer home-cooked food with clean ingredients.
 
 ### Health Tips
 
-1. Fasting helps body detoxification.
+1. Fasting helps body detoxification & rejuvenation.
 
    1. Aim for 14 to 16 hours of fasting daily.
-   2. Or try a 24-hour soup fast once a week.
+   2. Or try a 24-hour veg soup fast once a week.
    3. Example: Eat dinner at 7 PM, then have your next meal at 9 AM the next day.
 
 2. Start the day with Detox Juice
 
    1. Drink a glass of detox juice every morning.
-   2. Recipe: Bottle guard, Beetroot, Carrot, ABC Juice.
-   3. GIve 1 to 1.5 hours gap after juice before healthy breakfast.
+   2. Recipe: Ash gourd, Beetroot, Carrot, ABC Juice.
+   3. Give 1 to 1.5 hours gap after juice before healthy breakfast.
 
 3. Have nutrient food for breakfast
+
    1. Fresh Seasonal fruits & Nuts
    2. Cook with clean ingredients
 
