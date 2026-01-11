@@ -21,19 +21,34 @@ All the diseases we have today are because of the food we eat.
    3. Easy way is to see whether chemicals are listed in the ingredients.
    4. There will be chemical number codes like E100, E200, etc.
    5. Other harmful chemicals are MSG, Aspartame, High Fructose Corn Syrup (HFCS)
+   6. Watchout for code names like Sodium Nitrate, Sodium Benzoate, Potassium Sorbate,
+      E200, E211, E202, E220, etc.
+   7. If you don't find any ingredients that are used in home, then avoid that food.
+   8. Whenever you pick a packaged food, think whether you can make it in home with
+      simple ingredients. If not read the ingredients list carefully.
 2. What about the food we eat in restaurants?
-   1. Most restaurants use processed ingredients to save cost.
-   2. They use refined oils, maida, and artificial colors to make food look attractive.
-   3. Avoid eating out frequently.
-   4. Best example: French fries made in home decay in 7 days, but restaurant
+   1. Samosa, Bread, Sandwiches, Burgers, Pizza, Noodles, Pasta, etc.
+   2. Most restaurants use processed ingredients to save cost.
+   3. They use refined oils, maida, and artificial colors to make food look attractive.
+   4. Avoid eating out frequently.
+   5. Best example: French fries made in home decay in 7 days, but restaurant
       fries remain the same for months (+16 ingredients used).
-   5. The food industries make use addictive ingredients to make you crave more.
-   6. Example: Combination of sugar, salt & fat.
-   7. Maida, Sugar & Refined oils make addictive
-   8. Maida causes all digestive issues & many disease
-   9. Refined oils cause heart diseases by blocking arteries.
+   6. Fast food have highly processed ingredients.
+   7. The food industries make use addictive ingredients to make you crave more.
+   8. Example: Combination of sugar, salt & fat.
+   9. Maida, Sugar & Refined oils make addictive
+   10. Maida causes all digestive issues & many disease
+   11. Refined oils cause heart diseases by blocking arteries.
 3. So what should we eat?
    1. **TBD**
+
+:::tip
+You need to put clean food in your body to get optimal output out of it.
+You will feel more energetic, focused, and happy when you eat clean food.
+
+Read ingredients carefully before buying packaged food.
+Avoid outside food & prefer home-cooked food with clean ingredients.
+:::
 
 ### Health Tips
 

@@ -102,12 +102,12 @@ const config = {
             position: "left",
             label: "Tech Docs",
           },
-          // {
-          //   type: "docSidebar",
-          //   sidebarId: "nonTechDocsSidebar",
-          //   position: "left",
-          //   label: "Non Tech Docs",
-          // },
+          {
+            type: "docSidebar",
+            sidebarId: "nonTechDocsSidebar",
+            position: "left",
+            label: "Non Tech Docs",
+          },
           {
             type: "docSidebar",
             sidebarId: "booksSidebar",
