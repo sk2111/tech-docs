@@ -46,6 +46,11 @@ To create a new GitHub repository, follow these steps:
 
    ![github move app](assets/9_move_app.png)
 
+   :::important
+   If you don't have the apps in handy, you can download them from the link
+   [Download the Python & Node Js Apps](https://github.com/sk2111/devops-deployment)
+   :::
+
 2. After moving the application files, you need to commit and push these changes
    to your GitHub repository. Use the following commands
 
@@ -57,11 +62,6 @@ To create a new GitHub repository, follow these steps:
 
    ![github commit the apps](assets/10_commit_the_apps.png)
    ![github commit the apps](assets/11_commit_the_apps.png)
-
-:::important
-If you don't have the apps in handy, you can download them from the link
-[Download the Python & Node Js Apps](https://github.com/sk2111/devops-deployment)
-:::
 
 :::tip[production tip]
 
