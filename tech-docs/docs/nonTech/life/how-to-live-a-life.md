@@ -69,7 +69,8 @@ Avoid outside food & prefer home-cooked food with clean ingredients.
 3. Have nutrient food for breakfast
 
    1. Fresh Seasonal fruits & Nuts
-   2. Cook with clean ingredients
+   2. The thought process is to have food which gives sustained energy for
+      morning work & have less load on digestion.
 
 ### Take care of your mind & body
 
